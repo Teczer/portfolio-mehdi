@@ -1,3 +1,5 @@
+"use client";
+
 import { SiMui, SiTailwindcss, SiPostgresql } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { DiMongodb, DiSwift } from "react-icons/di";
@@ -112,7 +114,7 @@ const Skills: React.FC = () => {
         },
         {
           icon: <SiPostgresql />,
-          label: "PostgreSQL",
+          label: "postgresql",
         },
       ],
     },
@@ -139,32 +141,87 @@ const Skills: React.FC = () => {
       ],
     },
   ];
+
+  const order = ["Back-end", "Front-end", "Autres", "Design"];
+
+  // Crée une copie du tableau SkillsSection avec slice()
+  const skillsCopy = SkillsSection.slice();
+
+  // Trie les sections
+  const sortedSkillsSections = skillsCopy.sort(
+    (a, b) => order.indexOf(a.title) - order.indexOf(b.title)
+  );
+
+  // Retire les compétences "MongoDB" et "SwiftUI"
+  const filteredSkillsSections = sortedSkillsSections.map((section) => ({
+    ...section,
+    skills: section.skills.filter(
+      (skill) => skill.label !== "MongoDB" && skill.label !== "SwiftUI"
+    ),
+  }));
+
   return (
     <div className="w-full">
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Skills
       </h2>
-      <div className="flex justify-between">
+      <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
+        {/* DESKTOP SECTION */}
         {SkillsSection.map((skill, index) => {
           return (
-            <div key={index}>
+            <div
+              className="hidden sm:flex flex-col items-center justify-start"
+              key={index}
+            >
               <h3 className="text-white text-2xl font-bold mb-4">
                 {skill.title}
               </h3>
-              <ul className="text-white flex flex-col gap-2">
-                {skill.skills.map((value, index) => {
+              <ul className="flex flex-col gap-2 text-white ">
+                {skill.skills.map((skill, index) => {
                   return (
                     <li
                       className="flex justify-start text-lg items-center gap-2"
                       key={index}
                     >
-                      <i>{value.icon}</i>
+                      <i>{skill.icon}</i>
                       <p
                         className={`${
-                          value.important && "gradient-primary font-bold"
+                          skill.important && "gradient-primary font-bold"
                         }`}
                       >
-                        {value.label}
+                        {skill.label}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
+        {/* MOBILE SECTION */}
+        {filteredSkillsSections.map((skill, index) => {
+          return (
+            <div
+              className="mb-10 flex flex-col items-center justify-center sm:hidden"
+              key={index}
+            >
+              <h3 className="text-white text-2xl font-bold mb-4">
+                {skill.title}
+              </h3>
+              <ul className="flex flex-col gap-2 text-white">
+                {skill.skills.map((skill, index) => {
+                  return (
+                    <li
+                      className="flex justify-start text-lg items-center gap-2"
+                      key={index}
+                    >
+                      <i>{skill.icon}</i>
+                      <p
+                        className={`${
+                          skill.important && "gradient-primary font-bold"
+                        }`}
+                      >
+                        {skill.label}
                       </p>
                     </li>
                   );

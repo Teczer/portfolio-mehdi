@@ -59,7 +59,7 @@ const MainView: React.FC = () => {
             basé à Paris.
           </p>
         </div>
-        <ul className="flex gap-3">
+        <ul className="flex gap-3 flex-wrap">
           {badgeLinks.map((badge, index) => {
             return (
               <li key={index}>

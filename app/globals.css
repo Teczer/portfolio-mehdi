@@ -75,10 +75,28 @@
   }
 }
 
+@keyframes swipeFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .gradient-primary {
   background: linear-gradient(92.72deg, #e54d2e 0%, #d6409f 100%);
   -webkit-background1-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.bg-paper1 {
+  --tw-bg-opacity: 1;
+  background-color: #181111;
+}
+
+.animate-swipeFromLeft {
+  animation: swipeFromRight 0.2s ease-out;
 }
