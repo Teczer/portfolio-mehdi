@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <div className="items-center justify-between hidden sm:flex py-4">
+      <div className="items-center justify-between flex py-4">
         <Image
           src="/Mehdoche.jpg"
           alt="Mehdi HATTOU"
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           priority
         />
         <nav>
-          <ul className="items-center hidden gap-8 sm:flex ">
+          <ul className="flex items-center gap-8">
             {navigation.map((value, index) => {
               return (
                 <li key={index}>
