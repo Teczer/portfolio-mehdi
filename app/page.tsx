@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import SvgAnimated from "@/components/SvgAnimated";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <SvgAnimated />
       <div className="relative min-h-full">
         <Header />
+        <Badge variant="destructive">Badge</Badge>
       </div>
     </main>
   );
