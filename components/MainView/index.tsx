@@ -55,7 +55,7 @@ const MainView: React.FC = () => {
             Mehdi Hattou
           </h1>
           <p className="text-[clamp(1.5rem,1.3vw+1rem,2.6rem)] text-white sm:mt-4">
-            <b>Développeur Web.</b> Entrenant une forte affinité avec React,
+            <b>Développeur Web.</b> Partageant une forte affinité avec React,
             basé à Paris.
           </p>
         </div>

@@ -163,7 +163,7 @@ const Skills: React.FC = () => {
   return (
     <div className="w-full">
       <h2 className="text-4xl text-center text-white font-bold mb-10">
-        Skills
+        Compétences
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
         {/* DESKTOP SECTION */}

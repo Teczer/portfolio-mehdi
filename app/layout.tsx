@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mehdi Hattou • Développeur Web",
   description:
-    "Développeur Web. Entrenant une forte affinité avec React, basé à Paris.",
+    "Développeur Web. Partageant une forte affinité avec React, basé à Paris.",
   icons: {
     icon: ["/favicon.ico?v=4"],
     apple: ["/apple-touch-icon.png?v=4"],
