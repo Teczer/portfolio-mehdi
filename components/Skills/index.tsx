@@ -1,9 +1,13 @@
 "use client";
 
+import Image from "next/image";
+
+import { motion } from "framer-motion";
+
 import { SiMui, SiTailwindcss, SiPostgresql } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { DiMongodb, DiSwift } from "react-icons/di";
-import Image from "next/image";
+import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
 interface Skill {
   icon: React.ReactNode;
@@ -161,10 +165,11 @@ const Skills: React.FC = () => {
   }));
 
   return (
-    <div className="w-full">
+    <div className="w-full" id="skills">
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Compétences
       </h2>
+
       <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
         {/* DESKTOP SECTION */}
         {SkillsSection.map((skill, index) => {
@@ -179,9 +184,14 @@ const Skills: React.FC = () => {
               <ul className="flex flex-col gap-2 text-white ">
                 {skill.skills.map((skill, index) => {
                   return (
-                    <li
+                    <motion.li
                       className="flex justify-start text-lg items-center gap-2"
                       key={index}
+                      variants={fadeInAnimationsVariants}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                      custom={index}
                     >
                       <i>{skill.icon}</i>
                       <p
@@ -191,7 +201,7 @@ const Skills: React.FC = () => {
                       >
                         {skill.label}
                       </p>
-                    </li>
+                    </motion.li>
                   );
                 })}
               </ul>
@@ -211,9 +221,14 @@ const Skills: React.FC = () => {
               <ul className="flex flex-col gap-2 text-white">
                 {skill.skills.map((skill, index) => {
                   return (
-                    <li
+                    <motion.li
                       className="flex justify-start text-lg items-center gap-2"
                       key={index}
+                      variants={fadeInAnimationsVariants}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                      custom={index}
                     >
                       <i>{skill.icon}</i>
                       <p
@@ -223,7 +238,7 @@ const Skills: React.FC = () => {
                       >
                         {skill.label}
                       </p>
-                    </li>
+                    </motion.li>
                   );
                 })}
               </ul>
