@@ -24,6 +24,8 @@ import { Button } from "../ui/button";
 
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -162,13 +164,23 @@ const Projects: React.FC = () => {
       ],
     },
   ];
+
+  // Framer motion
+
+  const [ref, inView] = useInView({ triggerOnce: false });
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(inView);
+  }, [inView]);
   return (
     <div className="w-full" id="projects">
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Projets
       </h2>
 
-      <div className="gap-8 flex flex-wrap items-start justify-start">
+      <div className="gap-8 flex flex-wrap items-start justify-start" ref={ref}>
         {/* CARD */}
         {projectList.map((project, index) => {
           return (
@@ -176,9 +188,8 @@ const Projects: React.FC = () => {
               className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl transition-all	hover:scale-105"
               key={index}
               variants={fadeInAnimationsVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+              initial={isVisible ? "animate" : "initial"}
+              animate={isVisible ? "animate" : "initial"}
               custom={index}
             >
               <div className="flex items-center justify-between">
