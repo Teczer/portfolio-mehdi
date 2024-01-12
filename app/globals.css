@@ -101,3 +101,31 @@
 .animate-swipeFromLeft {
   animation: swipeFromRight 0.2s ease-out;
 }
+
+.ring {
+  fill: none;
+  stroke-dasharray: 720 180;
+  stroke-linecap: round;
+  stroke: hsl(348 75% 59%);
+  stroke-width: 20px;
+  animation: progress 3s linear normal infinite;
+}
+.left {
+  transform: translate(100px, 0) rotate(90deg);
+}
+.right {
+  transform: translate(100px, 200px) rotate(-90deg);
+  animation-delay: 1.5s;
+  animation-direction: reverse;
+}
+
+@keyframes progress {
+  0%,
+  10% {
+    stroke-dashoffset: 100;
+  }
+  90%,
+  100% {
+    stroke-dashoffset: -900;
+  }
+}
