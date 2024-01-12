@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 
-import { SiMui, SiTailwindcss, SiPostgresql } from "react-icons/si";
+import { SiNginx, SiTailwindcss, SiPostgresql, SiStrapi } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
-import { DiMongodb, DiSwift } from "react-icons/di";
+import { DiSwift } from "react-icons/di";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
 import { motion } from "framer-motion";
-
-import shadcn from "/shadcn.svg";
 
 interface Skill {
   icon: React.ReactNode;
@@ -110,8 +108,8 @@ const Skills: React.FC = () => {
           important: true,
         },
         {
-          icon: <DiMongodb />,
-          label: "MongoDB",
+          icon: <SiStrapi />,
+          label: "strapi",
         },
         {
           icon: (
@@ -151,6 +149,10 @@ const Skills: React.FC = () => {
           ),
           label: "Docker",
           important: true,
+        },
+        {
+          icon: <SiNginx />,
+          label: "nginx",
         },
       ],
     },
