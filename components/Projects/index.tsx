@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -25,7 +27,6 @@ import { Button } from "../ui/button";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
 
 interface ProjectSkills {
   icon: React.ReactNode;

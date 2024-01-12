@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 
 import { SiNginx, SiTailwindcss, SiPostgresql, SiStrapi } from "react-icons/si";
@@ -8,6 +10,7 @@ import { DiSwift } from "react-icons/di";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface Skill {
   icon: React.ReactNode;
@@ -176,13 +179,26 @@ const Skills: React.FC = () => {
     ),
   }));
 
+  // Framer motion
+
+  const [ref, inView] = useInView({ triggerOnce: false });
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(inView);
+  }, [inView]);
+
   return (
     <div className="w-full" id="skills">
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Compétences
       </h2>
 
-      <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
+      <div
+        className="grid grid-cols-2 gap-4 sm:flex sm:justify-between"
+        ref={ref}
+      >
         {/* DESKTOP SECTION */}
         {SkillsSection.map((skill, index) => {
           return (
@@ -200,9 +216,8 @@ const Skills: React.FC = () => {
                       className="flex justify-start text-lg items-center gap-2"
                       key={index}
                       variants={fadeInAnimationsVariants}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true }}
+                      initial={isVisible ? "animate" : "initial"}
+                      animate={isVisible ? "animate" : "initial"}
                       custom={index}
                     >
                       <i>{skill.icon}</i>
