@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Header from "@/components/Header";
 import MainView from "@/components/MainView";
 import Projects from "@/components/Projects";
@@ -14,14 +15,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-12 mt-16 sm:mt-0 sm:gap-24">
           <Skills />
           <Projects />
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
-          <h1></h1>
+          <Contact />
           <h1></h1>
           <h1></h1>
           <h1></h1>

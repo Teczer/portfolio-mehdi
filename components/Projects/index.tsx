@@ -214,7 +214,7 @@ const Projects: React.FC = () => {
                     <li key={index}>
                       <Badge
                         className="rounded-full text-xs font-medium"
-                        variant="destructive"
+                        variant="project"
                       >
                         <i className="mr-2">{skill.icon}</i>
                         {skill.label}
@@ -267,7 +267,7 @@ const Projects: React.FC = () => {
                           <li key={index}>
                             <Badge
                               className="rounded-full text-xs font-medium"
-                              variant="destructive"
+                              variant="project"
                             >
                               <i className="mr-2">{skill.icon}</i>
                               {skill.label}
