@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
-
 import { SiMui, SiTailwindcss, SiPostgresql } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { DiMongodb, DiSwift } from "react-icons/di";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
+
+import { motion } from "framer-motion";
+
+import shadcn from "/shadcn.svg";
 
 interface Skill {
   icon: React.ReactNode;
@@ -61,8 +63,16 @@ const Skills: React.FC = () => {
           important: true,
         },
         {
-          icon: <SiMui />,
-          label: "Material UI",
+          icon: (
+            <Image
+              src="/shadcn.svg"
+              alt="shadcn"
+              className="w-5 h-5"
+              width={20}
+              height={20}
+            />
+          ),
+          label: "shadcn-ui",
         },
         {
           icon: (

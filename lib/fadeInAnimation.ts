@@ -1,5 +1,4 @@
 // Framer Motion
-
 export const fadeInAnimationsVariants = {
   initial: {
     opacity: 0,
