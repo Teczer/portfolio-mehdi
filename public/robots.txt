@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://mehdihattou.com/sitemap.xml
