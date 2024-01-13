@@ -171,12 +171,12 @@ const Projects: React.FC = () => {
     setIsVisible(inView);
   }, [inView]);
   return (
-    <div className="w-full" id="projects">
+    <div className="w-full" id="projects" ref={ref}>
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Projets
       </h2>
       {/* MAIN SECTION */}
-      <div className="gap-8 flex flex-wrap items-start justify-start" ref={ref}>
+      <div className="gap-8 flex flex-wrap items-start justify-start">
         {/* CARD */}
         {projectList.map((project, index) => {
           return (
