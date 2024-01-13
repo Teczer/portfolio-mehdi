@@ -48,7 +48,7 @@ const Header: React.FC = () => {
               return (
                 <li key={index}>
                   <Link className="flex gap-2" href={value.href}>
-                    <span className="text-primary font-mono">{index + 1}.</span>
+                    <span className="text-primary font-mono">{index}.</span>
                     <span className="text-white">{value.title}</span>
                   </Link>
                 </li>

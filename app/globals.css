@@ -75,14 +75,7 @@
   }
 }
 
-@keyframes swipeFromRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
+/* GRADIENT TEXT */
 
 .gradient-primary {
   background: linear-gradient(92.72deg, #e54d2e 0%, #d6409f 100%);
@@ -97,9 +90,22 @@
   background-color: #181111;
 }
 
+/* BURGER MENU */
+
+@keyframes swipeFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .animate-swipeFromLeft {
   animation: swipeFromRight 0.2s ease-out;
 }
+
+/* SVG-FOOTER */
 
 .ring {
   fill: none;
@@ -127,4 +133,23 @@
   100% {
     stroke-dashoffset: -900;
   }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--foreground));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666770;
 }

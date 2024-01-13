@@ -251,7 +251,6 @@ const Projects: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <p className="text-2xl ">{project.icon}</p>
                       <Link href={project.url} target="_blank">
-                        <p>Aller</p>
                         <i className="text-white cursor-pointer">
                           <FaExternalLinkAlt />
                         </i>
