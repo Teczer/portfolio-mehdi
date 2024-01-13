@@ -22,7 +22,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../ui/collapsible";
-import { Button } from "../ui/button";
 
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
@@ -230,7 +229,9 @@ const Projects: React.FC = () => {
       <div className="flex items-center justify-center w-full text-white mt-6">
         <Collapsible>
           <CollapsibleTrigger className="w-full mb-6">
-            <Button variant="destructive">Plus de projets ici !</Button>
+            <Badge className="p-2" variant="destructive">
+              Plus de projets ici !
+            </Badge>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <div className="gap-8 flex flex-wrap items-start justify-start">
