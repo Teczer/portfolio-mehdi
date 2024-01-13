@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         <Image
           src="/Mehdoche.jpg"
           alt="Mehdi HATTOU"
-          className="rounded-full"
+          className="rounded-full w-auto h-auto"
           width={40}
           height={40}
           priority
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
               <Image
                 src="/Mehdoche.jpg"
                 alt="Mehdi HATTOU"
-                className="rounded-full"
+                className="rounded-full w-auto h-auto"
                 width={80}
                 height={80}
               />

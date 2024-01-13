@@ -39,9 +39,10 @@ const MainView: React.FC = () => {
           <Image
             src="/Mehdoche.jpg"
             alt="Mehdi HATTOU"
-            className="rounded-full sm:"
+            className="rounded-full w-auto h-auto"
             width={400}
             height={400}
+            priority
           />
         </motion.div>
       </div>
@@ -59,6 +60,7 @@ const MainView: React.FC = () => {
               className="absolute top-[-16px] left-[-16px] z-[-1]"
               width={120}
               height={120}
+              priority
             />
           </motion.div>
           <motion.p

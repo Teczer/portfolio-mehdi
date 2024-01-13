@@ -8,7 +8,7 @@ import SvgAnimated from "@/components/SvgAnimated";
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-w-6xl m-auto px-4">
+    <main className="min-h-full max-w-6xl m-auto px-4 relative">
       <SvgAnimated />
       <div className="relative min-h-full">
         <Header />

@@ -239,7 +239,7 @@ const Skills: React.FC = () => {
         {filteredSkillsSections.map((skill, index) => {
           return (
             <div
-              className="mb-10 flex flex-col items-center justify-center sm:hidden"
+              className="mb-10 flex flex-col items-center justify-start sm:hidden"
               key={index}
             >
               <h3 className="text-white text-2xl font-bold mb-4">
