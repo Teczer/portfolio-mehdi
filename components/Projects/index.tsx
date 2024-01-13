@@ -195,6 +195,7 @@ const Projects: React.FC = () => {
               <div className="flex items-center justify-between">
                 <p className="text-2xl ">{project.icon}</p>
                 <Link href={project.url} target="_blank">
+                  <p className="text-card text-xs">a</p>
                   <i className="text-white cursor-pointer">
                     <FaExternalLinkAlt />
                   </i>
@@ -229,7 +230,7 @@ const Projects: React.FC = () => {
       <div className="flex items-center justify-center w-full text-white mt-6">
         <Collapsible>
           <CollapsibleTrigger className="w-full mb-6">
-            <Badge className="p-2" variant="destructive">
+            <Badge className="p-2" variant="destructiveContrast">
               Plus de projets ici !
             </Badge>
           </CollapsibleTrigger>
@@ -250,6 +251,7 @@ const Projects: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <p className="text-2xl ">{project.icon}</p>
                       <Link href={project.url} target="_blank">
+                        <p>Aller</p>
                         <i className="text-white cursor-pointer">
                           <FaExternalLinkAlt />
                         </i>
