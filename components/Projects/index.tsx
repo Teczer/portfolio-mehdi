@@ -17,11 +17,6 @@ import {
 import { FaReact, FaDocker, FaJava, FaLess } from "react-icons/fa";
 
 import { Badge } from "../ui/badge";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "../ui/collapsible";
 
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
@@ -41,6 +36,7 @@ interface ProjectsList {
 }
 
 const Projects: React.FC = () => {
+  // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
       icon: "🌌",
@@ -165,7 +161,7 @@ const Projects: React.FC = () => {
     },
   ];
 
-  // Framer motion
+  // FRAMER MOTION
 
   const [ref, inView] = useInView({ triggerOnce: false });
 
@@ -179,13 +175,13 @@ const Projects: React.FC = () => {
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Projets
       </h2>
-
+      {/* MAIN SECTION */}
       <div className="gap-8 flex flex-wrap items-start justify-start" ref={ref}>
         {/* CARD */}
         {projectList.map((project, index) => {
           return (
             <motion.div
-              className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl transition-all	hover:scale-105"
+              className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl"
               key={index}
               variants={fadeInAnimationsVariants}
               initial={isVisible ? "animate" : "initial"}
@@ -227,63 +223,58 @@ const Projects: React.FC = () => {
           );
         })}
       </div>
+      {/* SUB SECTION */}
       <div className="flex items-center justify-center w-full text-white mt-6">
-        <Collapsible>
-          <CollapsibleTrigger className="w-full mb-6">
-            <Badge className="p-2" variant="destructiveContrast">
-              Plus de projets ici !
-            </Badge>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <div className="gap-8 flex flex-wrap items-start justify-start">
-              {/* CARD */}
-              {subProjectList.map((project, index) => {
-                return (
-                  <motion.div
-                    className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl"
-                    key={index}
-                    variants={fadeInAnimationsVariants}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    custom={index}
-                  >
-                    <div className="flex items-center justify-between">
-                      <p className="text-2xl ">{project.icon}</p>
-                      <Link href={project.url} target="_blank">
-                        <i className="text-white cursor-pointer">
-                          <FaExternalLinkAlt />
-                        </i>
-                      </Link>
-                    </div>
-                    <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <ul className="flex flex-wrap items-center justify-start gap-2">
-                      {/* SKILLS */}
-                      {project.skills.map((skill, index) => {
-                        return (
-                          <li key={index}>
-                            <Badge
-                              className="rounded-full text-xs font-medium"
-                              variant="project"
-                            >
-                              <i className="mr-2">{skill.icon}</i>
-                              {skill.label}
-                            </Badge>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
+        <div
+          className="gap-8 flex flex-wrap items-start justify-start"
+          ref={ref}
+        >
+          {/* CARD */}
+          {subProjectList.map((project, index) => {
+            return (
+              <motion.div
+                className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl"
+                key={index}
+                variants={fadeInAnimationsVariants}
+                initial={isVisible ? "animate" : "initial"}
+                animate={isVisible ? "animate" : "initial"}
+                custom={index + 2}
+              >
+                <div className="flex items-center justify-between">
+                  <p className="text-2xl ">{project.icon}</p>
+                  <Link href={project.url} target="_blank">
+                    <p className="text-card text-xs">a</p>
+                    <i className="text-white cursor-pointer">
+                      <FaExternalLinkAlt />
+                    </i>
+                  </Link>
+                </div>
+                <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+                <ul className="flex flex-wrap items-center justify-start gap-2">
+                  {/* SKILLS */}
+                  {project.skills.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <Badge
+                          className="rounded-full text-xs font-medium"
+                          variant="project"
+                        >
+                          <i className="mr-2">{skill.icon}</i>
+                          {skill.label}
+                        </Badge>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
