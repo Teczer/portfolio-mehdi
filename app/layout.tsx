@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     apple: ["/apple-touch-icon.png?v=4"],
     shortcut: ["/apple-touch-icon.png"],
   },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="fr" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="bg-background h-full">{children}</body>
     </html>
   );
