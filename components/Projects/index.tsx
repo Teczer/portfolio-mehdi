@@ -149,31 +149,31 @@ const Projects: React.FC = () => {
         },
       ],
     },
-    // {
-    //   icon: "📖",
-    //   url: "https://reading.cv-tools.fr/",
-    //   title: "Reading",
-    //   description:
-    //     "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés.",
-    //   skills: [
-    //     {
-    //       icon: <SiNextdotjs />,
-    //       label: "NextJS",
-    //     },
-    //     {
-    //       icon: <SiNextra />,
-    //       label: "Nextra",
-    //     },
-    //     {
-    //       icon: <SiTailwindcss />,
-    //       label: "Tailwind",
-    //     },
-    //     {
-    //       icon: <FaDocker />,
-    //       label: "Docker",
-    //     },
-    //   ],
-    // },
+    {
+      icon: "📖",
+      url: "https://reading-demo.vercel.app/",
+      title: "Reading",
+      description:
+        "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)",
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "NextJS",
+        },
+        {
+          icon: <SiNextra />,
+          label: "Nextra",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
   ];
 
   // FRAMER MOTION

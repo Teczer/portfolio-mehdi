@@ -1,4 +1,10 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa";
 
 interface BadgeLinks {
   label: string;
@@ -16,6 +22,11 @@ export const useContactBadge: BadgeLinks[] = [
     label: "LinkedIn",
     icon: <FaLinkedin />,
     href: "https://www.linkedin.com/in/mehdi-hattou/",
+  },
+  {
+    label: "Twitter",
+    icon: <FaTwitter />,
+    href: "https://twitter.com/Mehdi_Hattou",
   },
   {
     label: "(+33) 7 69 86 87 32",
