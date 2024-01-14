@@ -12,10 +12,11 @@ import Image from "next/image";
 import { IoMdPhotos } from "react-icons/io";
 
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface CarouselProps {
-  desktopGif?: string[];
-  mobileGif?: string[];
+  desktopGif?: string[] | null;
+  mobileGif?: string[] | null;
 }
 
 const CarouselProject: React.FC<CarouselProps> = ({
@@ -34,12 +35,16 @@ const CarouselProject: React.FC<CarouselProps> = ({
     setCount(api.scrollSnapList().length);
   }, [api]);
 
-  console.log("api", api);
-  console.log("count", count);
   return (
     <Dialog>
-      <DialogTrigger aria-label="modal">
-        <i className="text-white cursor-pointer scale-125 transition-all hover:scale-150">
+      <DialogTrigger
+        className={cn(
+          "text-white cursor-pointer scale-125 transition-all hover:scale-150",
+          mobileGif?.length === undefined && "hidden sm:block"
+        )}
+        aria-label="modal"
+      >
+        <i>
           <IoMdPhotos />
         </i>
       </DialogTrigger>

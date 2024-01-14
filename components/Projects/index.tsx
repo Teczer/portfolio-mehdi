@@ -22,6 +22,7 @@ import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
+import Image from "next/image";
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -30,7 +31,7 @@ interface ProjectSkills {
 
 interface ProjectsList {
   icon: string;
-  url: string;
+  url?: string;
   title: string;
   description: string;
   skills: ProjectSkills[];
@@ -41,6 +42,67 @@ interface ProjectsList {
 const Projects: React.FC = () => {
   // MAIN SECTION
   const projectList: ProjectsList[] = [
+    {
+      icon: "🎶",
+      title: "Spotify Max +",
+      description:
+        "Projet avancé de Spotify réalisé en collaboration avec mon grand-frère, initiateur et lead du projet. Explorez de nouvelles fonctionnalités et une expérience utilisateur améliorée.",
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "NextJS",
+        },
+        {
+          icon: <Image src="/shadcn.svg" alt="shadcn" width={12} height={12} />,
+          label: "shadcn-ui",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+      desktopGif: [
+        "/spotify/desktop/homepage.gif",
+        "/spotify/desktop/search.gif",
+      ],
+      mobileGif: [
+        "/spotify/mobile/homepage.gif",
+        "/spotify/mobile/search.gif",
+        "/spotify/mobile/studio.gif",
+      ],
+    },
+    {
+      icon: "🏗️",
+      title: "New-Delhi",
+      description:
+        "CMS Builder interne SAAS pour Carrefour Voyages, spécialisé dans la création rapide de newsletters.",
+      skills: [
+        {
+          icon: <FaReact />,
+          label: "react.js",
+        },
+        {
+          icon: <SiStrapi />,
+          label: "strapi",
+        },
+        {
+          icon: <SiPostgresql />,
+          label: "postgresql",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+      desktopGif: ["/new-delhi/builder.gif"],
+    },
+  ];
+  // SUB SECTION
+  const subProjectList: ProjectsList[] = [
     {
       icon: "🌌",
       url: "https://asteriaspace.fr/",
@@ -67,6 +129,27 @@ const Projects: React.FC = () => {
       ],
     },
     {
+      icon: "✈️",
+      url: "https://voyages.carrefour.fr/",
+      title: "Carrefour Voyages",
+      description:
+        "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
+      skills: [
+        {
+          icon: <SiTypescript />,
+          label: "Typescript",
+        },
+        {
+          icon: <FaJava />,
+          label: "Freemarker",
+        },
+        {
+          icon: <FaLess />,
+          label: "Less",
+        },
+      ],
+    },
+    {
       icon: "📖",
       url: "https://reading.cv-tools.fr/",
       title: "Reading",
@@ -89,86 +172,6 @@ const Projects: React.FC = () => {
           icon: <FaDocker />,
           label: "Docker",
         },
-      ],
-    },
-    {
-      icon: "🏗️",
-      url: "https://reading.cv-tools.fr/",
-      title: "New-Delhi",
-      description:
-        "CMS Builder interne SAAS pour Carrefour Voyages, spécialisé dans la création rapide de newsletters.",
-      skills: [
-        {
-          icon: <FaReact />,
-          label: "react.js",
-        },
-        {
-          icon: <SiStrapi />,
-          label: "strapi",
-        },
-        {
-          icon: <SiPostgresql />,
-          label: "postgresql",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-      ],
-    },
-  ];
-  // SUB SECTION
-  const subProjectList: ProjectsList[] = [
-    {
-      icon: "✈️",
-      url: "https://voyages.carrefour.fr/",
-      title: "Carrefour Voyages",
-      description:
-        "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
-      skills: [
-        {
-          icon: <SiTypescript />,
-          label: "Typescript",
-        },
-        {
-          icon: <FaJava />,
-          label: "Freemarker",
-        },
-        {
-          icon: <FaLess />,
-          label: "Less",
-        },
-      ],
-    },
-    {
-      icon: "🎶",
-      url: "https://music.bakhaw.dev",
-      title: "Spotify Max +",
-      description:
-        "Projet avancé de Spotify réalisé en collaboration avec mon grand-frère, initiateur et lead du projet. Explorez de nouvelles fonctionnalités et une expérience utilisateur améliorée.",
-      skills: [
-        {
-          icon: <SiNextdotjs />,
-          label: "NextJS",
-        },
-
-        {
-          icon: <SiTailwindcss />,
-          label: "Tailwind",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-      ],
-      desktopGif: [
-        "/spotify/desktop/homepage.gif",
-        "/spotify/desktop/search.gif",
-      ],
-      mobileGif: [
-        "/spotify/mobile/homepage.gif",
-        "/spotify/mobile/search.gif",
-        "/spotify/mobile/studio.gif",
       ],
     },
   ];
@@ -210,15 +213,16 @@ const Projects: React.FC = () => {
                       mobileGif={project.mobileGif}
                     />
                   )}
-
-                  <Link
-                    href={project.url}
-                    target="_blank"
-                    className="text-white transition-all hover:scale-125"
-                    aria-label={project.title}
-                  >
-                    <FaExternalLinkAlt />
-                  </Link>
+                  {project.url && (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      className="text-white transition-all hover:scale-125"
+                      aria-label={project.title}
+                    >
+                      <FaExternalLinkAlt />
+                    </Link>
+                  )}
                 </div>
               </div>
               <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
@@ -236,7 +240,7 @@ const Projects: React.FC = () => {
                         className="rounded-full text-xs font-medium"
                         variant="project"
                       >
-                        <i className="mr-2">{skill.icon}</i>
+                        <i className="w-3 h-3 mr-2">{skill.icon}</i>
                         {skill.label}
                       </Badge>
                     </li>
@@ -273,14 +277,16 @@ const Projects: React.FC = () => {
                         mobileGif={project.mobileGif}
                       />
                     )}
-                    <Link
-                      href={project.url}
-                      target="_blank"
-                      className="text-white transition-all hover:scale-125"
-                      aria-label={project.title}
-                    >
-                      <FaExternalLinkAlt />
-                    </Link>
+                    {project.url && (
+                      <Link
+                        href={project.url}
+                        target="_blank"
+                        className="text-white transition-all hover:scale-125"
+                        aria-label={project.title}
+                      >
+                        <FaExternalLinkAlt />
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
