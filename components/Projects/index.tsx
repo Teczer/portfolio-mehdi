@@ -21,6 +21,7 @@ import { Badge } from "../ui/badge";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import CarouselProject from "../CarouselProject";
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -33,6 +34,8 @@ interface ProjectsList {
   title: string;
   description: string;
   skills: ProjectSkills[];
+  desktopGif?: string[];
+  mobileGif?: string[];
 }
 
 const Projects: React.FC = () => {
@@ -158,6 +161,15 @@ const Projects: React.FC = () => {
           label: "Docker",
         },
       ],
+      desktopGif: [
+        "/spotify/desktop/homepage.gif",
+        "/spotify/desktop/search.gif",
+      ],
+      mobileGif: [
+        "/spotify/mobile/homepage.gif",
+        "/spotify/mobile/search.gif",
+        "/spotify/mobile/studio.gif",
+      ],
     },
   ];
 
@@ -170,6 +182,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     setIsVisible(inView);
   }, [inView]);
+
   return (
     <div className="w-full" id="projects" ref={ref}>
       <h2 className="text-4xl text-center text-white font-bold mb-10">
@@ -190,12 +203,23 @@ const Projects: React.FC = () => {
             >
               <div className="flex items-center justify-between">
                 <p className="text-2xl ">{project.icon}</p>
-                <Link href={project.url} target="_blank">
-                  <p className="text-card text-xs">a</p>
-                  <i className="text-white cursor-pointer">
+                <div className="flex items-center justify-between gap-3">
+                  {project.desktopGif && (
+                    <CarouselProject
+                      desktopGif={project.desktopGif}
+                      mobileGif={project.mobileGif}
+                    />
+                  )}
+
+                  <Link
+                    href={project.url}
+                    target="_blank"
+                    className="text-white transition-all hover:scale-125"
+                    aria-label={project.title}
+                  >
                     <FaExternalLinkAlt />
-                  </i>
-                </Link>
+                  </Link>
+                </div>
               </div>
               <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
                 {project.title}
@@ -242,12 +266,22 @@ const Projects: React.FC = () => {
               >
                 <div className="flex items-center justify-between">
                   <p className="text-2xl ">{project.icon}</p>
-                  <Link href={project.url} target="_blank">
-                    <p className="text-card text-xs">a</p>
-                    <i className="text-white cursor-pointer">
+                  <div className="flex items-center justify-between gap-3">
+                    {(project.desktopGif || project.mobileGif) && (
+                      <CarouselProject
+                        desktopGif={project.desktopGif}
+                        mobileGif={project.mobileGif}
+                      />
+                    )}
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      className="text-white transition-all hover:scale-125"
+                      aria-label={project.title}
+                    >
                       <FaExternalLinkAlt />
-                    </i>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
                 <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
                   {project.title}
