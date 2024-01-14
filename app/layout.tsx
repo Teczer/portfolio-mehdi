@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    title: "Mehdi Hattou • Développeur Web",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export default function RootLayout({
