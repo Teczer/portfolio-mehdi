@@ -83,7 +83,11 @@ const Header: React.FC = () => {
                 {navigation.map((value, index) => {
                   return (
                     <li key={index}>
-                      <Link className="text-xl md:text-base" href={value.href}>
+                      <Link
+                        className="text-xl md:text-base"
+                        href={value.href}
+                        onClick={() => setBurger(false)}
+                      >
                         <span className="text-primary font-mono">
                           {index + 1}.
                         </span>
