@@ -88,9 +88,7 @@ const Header: React.FC = () => {
                         href={value.href}
                         onClick={() => setBurger(false)}
                       >
-                        <span className="text-primary font-mono">
-                          {index + 1}.
-                        </span>
+                        <span className="text-primary font-mono">{index}.</span>
                         <span className="text-white">{value.title}</span>
                       </Link>
                     </li>

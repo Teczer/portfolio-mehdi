@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-import { SiNginx, SiTailwindcss, SiPostgresql, SiStrapi } from "react-icons/si";
+import {
+  SiNginx,
+  SiTailwindcss,
+  SiPostgresql,
+  SiStrapi,
+  SiNextdotjs,
+} from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
-import { DiSwift } from "react-icons/di";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
 import { motion } from "framer-motion";
@@ -89,8 +94,8 @@ const Skills: React.FC = () => {
           important: true,
         },
         {
-          icon: <DiSwift />,
-          label: "SwiftUI",
+          icon: <SiNextdotjs />,
+          label: "next.js",
         },
       ],
     },
@@ -174,9 +179,7 @@ const Skills: React.FC = () => {
   // Retire les compétences "MongoDB" et "SwiftUI"
   const filteredSkillsSections = sortedSkillsSections.map((section) => ({
     ...section,
-    skills: section.skills.filter(
-      (skill) => skill.label !== "MongoDB" && skill.label !== "SwiftUI"
-    ),
+    skills: section.skills.filter((skill) => skill.label !== "MongoDB"),
   }));
 
   // Framer motion
@@ -190,15 +193,12 @@ const Skills: React.FC = () => {
   }, [inView]);
 
   return (
-    <div className="w-full" id="skills">
+    <div className="w-full" id="skills" ref={ref}>
       <h2 className="text-4xl text-center text-white font-bold mb-10">
         Compétences
       </h2>
 
-      <div
-        className="grid grid-cols-2 gap-4 sm:flex sm:justify-between"
-        ref={ref}
-      >
+      <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
         {/* DESKTOP SECTION */}
         {SkillsSection.map((skill, index) => {
           return (
@@ -209,7 +209,7 @@ const Skills: React.FC = () => {
               <h3 className="text-white text-2xl font-bold mb-4">
                 {skill.title}
               </h3>
-              <ul className="flex flex-col gap-2 text-white ">
+              <ul className="flex flex-col gap-2 text-white">
                 {skill.skills.map((skill, index) => {
                   return (
                     <motion.li
@@ -218,7 +218,7 @@ const Skills: React.FC = () => {
                       variants={fadeInAnimationsVariants}
                       initial={isVisible ? "animate" : "initial"}
                       animate={isVisible ? "animate" : "initial"}
-                      custom={index}
+                      custom={index + 1}
                     >
                       <i>{skill.icon}</i>
                       <p
@@ -239,7 +239,7 @@ const Skills: React.FC = () => {
         {filteredSkillsSections.map((skill, index) => {
           return (
             <div
-              className="mb-10 flex flex-col items-center justify-start sm:hidden"
+              className="mb-10 flex flex-col justify-self-center items-start justify-start sm:hidden "
               key={index}
             >
               <h3 className="text-white text-2xl font-bold mb-4">
@@ -252,10 +252,9 @@ const Skills: React.FC = () => {
                       className="flex justify-start text-lg items-center gap-2"
                       key={index}
                       variants={fadeInAnimationsVariants}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true }}
-                      custom={index}
+                      initial={isVisible ? "animate" : "initial"}
+                      animate={isVisible ? "animate" : "initial"}
+                      custom={index + 1}
                     >
                       <i>{skill.icon}</i>
                       <p
