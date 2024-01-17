@@ -8,10 +8,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mehdi Hattou • Développeur Web",
   description:
-    "Développeur Web. Partageant une forte affinité avec React, basé à Paris.",
+    "Mehdi Hattou Développeur Web. Partageant une forte affinité avec React, basé à Paris.",
   icons: {
-    icon: ["/favicon.ico?v=4"],
-    apple: ["/apple-touch-icon.png?v=4"],
+    icon: ["/favicon.ico"],
+    apple: ["/apple-touch-icon.png"],
     shortcut: ["/apple-touch-icon.png"],
   },
   robots: { index: true, follow: true },
@@ -20,6 +20,38 @@ export const metadata: Metadata = {
     capable: true,
     title: "Mehdi Hattou • Développeur Web",
     statusBarStyle: "black-translucent",
+  },
+  keywords: [
+    "nextjs",
+    "mehdi",
+    "hattou",
+    "mehdi hattou",
+    "portfolio",
+    "développeur",
+    "developpeur web",
+    "developpeur web fullstack",
+    "reactjs",
+    "React",
+    "Paris",
+    "Développeur Paris",
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://mehdihattou.com",
+    title: "Mehdi Hattou • Développeur Web",
+    description:
+      "Mehdi Hattou Développeur Web. Partageant une forte affinité avec React, basé à Paris.",
+    siteName: "Mehdi Hattou • Développeur Web",
+    images: ["https://mehdihattou.com/Mehdoche.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "https://mehdihattou.com",
+    creator: "@Mehdi_Hattou",
+    images: "https://mehdihattou.com/Mehdoche.jpg",
+    title: "Mehdi Hattou • Développeur Web",
+    description:
+      "Mehdi Hattou Développeur Web. Partageant une forte affinité avec React, basé à Paris.",
   },
 };
 
