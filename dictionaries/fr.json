@@ -2,6 +2,7 @@
   "navigation": {
     "skills": "Compétences",
     "projects": "Projets",
+    "recommendations": "Recommendations",
     "contact": "Contact"
   },
   "mainView": {
@@ -16,6 +17,18 @@
     "asteria": "Apprendre les notions les plus complexes de d'astonomie de manière ludique et accompagné, avec à la clé des récompenses et une collection de cartes !",
     "carrefourVoyages": "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
     "reading": "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)"
+  },
+  "testimonial": {
+    "van": {
+      "title": "Lead Developer chez Carrefour",
+      "hierarchy": "Le 25 janvier 2024, Van Hoi était le/la manger direct(e) de Mehdi",
+      "description": "Merci Mehdi pour ton professionnalisme irréprochable qui a grandement contribué à la réussite et à l’atteinte de nos objectifs. Tes competences et ta capacité à collaborer efficacement font de toi un atout inestimable. Je le recommande vivement pour ses qualités professionnelles et humaines 🙌"
+    },
+    "abderrahmane": {
+      "title": "Lead Developer chez Carrefour",
+      "hierarchy": "Le 26 janvier 2024, Abderrahmane était le/la manger direct(e) de Mehdi",
+      "description": "Merci Mehdi pour ton implication, ton sérieux et ta capacité d'adaptation qui ont été grandement utile à Carrefour. Je le recommande donc pour toutes ces raison ainsi que sa joie de vivre"
+    }
   },
   "footer": {
     "author": "Conçu et réalisé par Mehdi Hattou."

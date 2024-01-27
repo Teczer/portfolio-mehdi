@@ -2,6 +2,7 @@
   "navigation": {
     "skills": "Skills",
     "projects": "Projects",
+    "recommendations": "Recommendations",
     "contact": "Contact"
   },
   "mainView": {
@@ -16,6 +17,19 @@
     "asteria": "Learn the most complex concepts of astronomy in a playful and guided manner, with rewards and a card collection as a bonus!",
     "carrefourVoyages": "During my internship, I resolved tickets, integrated themes like Christmas or Halloween, and contributed to the maintenance of the main website.",
     "reading": "Documentation of internal projects at Carrefour Voyages, including SAAS projects that I designed and documented. (DEMO VERSION)"
+  },
+
+  "testimonial": {
+    "van": {
+      "title": "Lead Developer at Carrefour",
+      "hierarchy": "On January 25, 2024, Van Hoi was Mehdi's direct manager",
+      "description": "Thank you Mehdi for your impeccable professionalism that greatly contributed to the success and achievement of our goals. Your skills and ability to collaborate effectively make you an invaluable asset. I highly recommend him for his professional and human qualities 🙌"
+    },
+    "abderrahmane": {
+      "title": "Lead Developer at Carrefour",
+      "hierarchy": "On January 26, 2024, Abderrahmane was Mehdi's direct manager",
+      "description": "Thank you Mehdi for your dedication, seriousness, and adaptability that have been greatly beneficial to Carrefour. I recommend him for all these reasons as well as his zest for life."
+    }
   },
   "footer": {
     "author": "Designed and built by Mehdi Hattou"

@@ -24,6 +24,10 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
       href: "#projects",
     },
     {
+      title: navigation.recommendations,
+      href: "#recommendations",
+    },
+    {
       title: navigation.contact,
       href: "#contact",
     },

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MainView from "@/components/MainView";
 import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
 import Skills from "@/components/Skills";
 import SvgAnimated from "@/components/SvgAnimated";
 
@@ -32,7 +33,8 @@ export default async function Home({
     ],
   };
 
-  const { navigation, mainView, projects, footer } = await getDictionary(lang);
+  const { navigation, mainView, projects, footer, testimonial } =
+    await getDictionary(lang);
 
   return (
     <main className="relative m-auto min-h-full max-w-6xl px-4">
@@ -47,6 +49,7 @@ export default async function Home({
         <div className="mt-16 flex flex-col items-center gap-12 sm:mt-0 sm:gap-24">
           <Skills />
           <Projects projects={projects} />
+          <Testimonials testimonial={testimonial} />
           <Contact />
           <Footer footer={footer} />
         </div>
