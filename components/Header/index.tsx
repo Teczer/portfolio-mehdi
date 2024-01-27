@@ -63,7 +63,7 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
         </button>
         {burger && (
           <div className="fixed inset-0 z-10 backdrop-blur-sm">
-            <nav className="animate-swipeFromLeft bg-paper1 ml-auto flex h-full w-2/4 flex-col items-end justify-center gap-8 p-8">
+            <nav className="animate-swipeFromLeft bg-paper1 ml-auto flex h-full w-3/5 flex-col items-center justify-center gap-12 p-8">
               <button
                 onClick={() => setBurger(false)}
                 className="absolute right-4 top-4"
@@ -82,7 +82,7 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
                   return (
                     <li key={index}>
                       <Link
-                        className="text-xl md:text-base"
+                        className="text-base md:text-base"
                         href={value.href}
                         onClick={() => setBurger(false)}
                       >

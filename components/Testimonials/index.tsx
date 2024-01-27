@@ -112,7 +112,7 @@ const Testimonials: React.FC<{ testimonial: TestimonialProps }> = ({
                       {project.title}
                     </h4>
                   </div>
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center justify-between gap-2 sm:gap-4">
                     <Link href={project.businessWebsiteURL} target="_blank">
                       <Image
                         src={project.businessLogo}
