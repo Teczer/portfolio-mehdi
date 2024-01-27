@@ -57,6 +57,8 @@ export function middleware(request: NextRequest) {
     "/vercel.svg",
     "/workbox-8817a5e5.js",
     "/workbox-8817a5e5.js.map",
+    "/spotify",
+    "new-delhi",
   ];
 
   if (excludePaths.some((path) => pathname.startsWith(path))) {
