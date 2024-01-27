@@ -1,16 +1,16 @@
 const Footer: React.FC<{ footer: any }> = ({ footer }) => {
   return (
-    <footer className="flex flex-col gap-4 items-center my-8">
-      <div className="mt-10 mb-5">
+    <footer className="my-8 flex flex-col items-center gap-4">
+      <div className="mb-5 mt-10">
         <div id="svg-animate">
           <svg height="40" width="80" viewBox="-20 -20 240 240">
             <path
-              className="ring left"
+              className="left ring"
               d="M100,0 a100,100 0 0 1 0,200 a100,100 0 0 1 0,-200"
               fill="none"
             />
             <path
-              className="ring right"
+              className="right ring"
               d="M100,0 a100,100 0 0 1 0,200 a100,100 0 0 1 0,-200"
             />
           </svg>

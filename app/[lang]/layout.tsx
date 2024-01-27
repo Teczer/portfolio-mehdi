@@ -73,7 +73,7 @@ export default function RootLayout({
       lang={params.lang}
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-background h-full">{children}</body>
+      <body className="h-full bg-background">{children}</body>
     </html>
   );
 }

@@ -185,16 +185,16 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
 
   return (
     <div className="w-full" id="projects" ref={ref}>
-      <h2 className="text-4xl text-center text-white font-bold mb-10">
+      <h2 className="mb-10 text-center text-4xl font-bold text-white">
         {projects.mainTitle}
       </h2>
       {/* MAIN SECTION */}
-      <div className="gap-8 flex flex-wrap items-start justify-start">
+      <div className="flex flex-wrap items-start justify-start gap-8">
         {/* CARD */}
         {projectList.map((project, index) => {
           return (
             <motion.div
-              className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl"
+              className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
               key={index}
               variants={fadeInAnimationsVariants}
               initial={isVisible ? "animate" : "initial"}
@@ -237,7 +237,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                         className="rounded-full text-xs font-medium"
                         variant="project"
                       >
-                        <i className="w-3 h-3 mr-2">{skill.icon}</i>
+                        <i className="mr-2 size-3">{skill.icon}</i>
                         {skill.label}
                       </Badge>
                     </li>
@@ -249,16 +249,16 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         })}
       </div>
       {/* SUB SECTION */}
-      <div className="flex items-center justify-center w-full text-white mt-6">
+      <div className="mt-6 flex w-full items-center justify-center text-white">
         <div
-          className="gap-8 flex flex-wrap items-start justify-start"
+          className="flex flex-wrap items-start justify-start gap-8"
           ref={ref}
         >
           {/* CARD */}
           {subProjectList.map((project, index) => {
             return (
               <motion.div
-                className="flex flex-1 flex-col gap-3 border h-auto bg-card rounded-lg p-6 shadow-2xl"
+                className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
                 key={index}
                 variants={fadeInAnimationsVariants}
                 initial={isVisible ? "animate" : "initial"}

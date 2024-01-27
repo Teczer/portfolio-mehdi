@@ -29,9 +29,9 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
   return (
     <section
       ref={ref}
-      className="flex flex-col justify-center items-center gap-10 px-4 h-[calc(100svh-40px-32px)] text-white py-56 sm:flex-row-reverse"
+      className="flex h-[calc(100svh-40px-32px)] flex-col items-center justify-center gap-10 px-4 py-56 text-white sm:flex-row-reverse"
     >
-      <div className="w-44 h-44 sm:w-fit sm:h-fit">
+      <div className="size-44 sm:size-fit">
         <motion.div
           variants={fadeInAnimationsVariants}
           initial={isVisible ? "animate" : "initial"}
@@ -41,15 +41,15 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
           <Image
             src="/Mehdoche.jpg"
             alt="Mehdi HATTOU"
-            className="rounded-full w-auto h-auto"
+            className="size-auto rounded-full"
             width={400}
             height={400}
             priority
           />
         </motion.div>
       </div>
-      <div className="flex flex-col gap-6 sm:gap-10 w-full">
-        <div className="w-fit flex flex-col gap-2 relative">
+      <div className="flex w-full flex-col gap-6 sm:gap-10">
+        <div className="relative flex w-fit flex-col gap-2">
           <motion.div
             variants={fadeInAnimationsVariants}
             initial={isVisible ? "animate" : "initial"}
@@ -59,7 +59,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             <Image
               src={point}
               alt="Mehdi HATTOU"
-              className="absolute top-[-16px] left-[-16px] z-[-1]"
+              className="absolute left-[-16px] top-[-16px] z-[-1]"
               width={120}
               height={120}
               priority
@@ -70,7 +70,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             initial={isVisible ? "animate" : "initial"}
             animate={isVisible ? "animate" : "initial"}
             custom={0}
-            className="text-primary text-2xl font-bold relative right-2 gradient-primary"
+            className="gradient-primary relative right-2 text-2xl font-bold text-primary"
           >
             {mainView.salutation}
           </motion.p>
@@ -79,7 +79,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             initial={isVisible ? "animate" : "initial"}
             animate={isVisible ? "animate" : "initial"}
             custom={1}
-            className="text-[clamp(3rem,5vw+1rem,6.2rem)] font-bold leading-[1.1] w-[70%] gradient-primary"
+            className="gradient-primary w-[70%] text-[clamp(3rem,5vw+1rem,6.2rem)] font-bold leading-[1.1]"
           >
             Mehdi Hattou
           </motion.h1>
@@ -94,7 +94,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             {mainView.jobDescription}
           </motion.p>
         </div>
-        <ul className="flex gap-3 flex-wrap">
+        <ul className="flex flex-wrap gap-3">
           {badgeLinks.map((badge, index) => (
             <motion.li
               key={index}
@@ -105,7 +105,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             >
               <Link href={badge.href} target="_blank">
                 <Badge
-                  className="p-2 px-3 rounded-full text-sm font-medium"
+                  className="rounded-full p-2 px-3 text-sm font-medium"
                   variant="destructive"
                 >
                   <i className="mr-2">{badge.icon}</i>

@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
   return (
     <div className="w-full" id="contact" ref={ref}>
       <motion.h2
-        className="text-4xl text-center text-white font-bold mb-10"
+        className="mb-10 text-center text-4xl font-bold text-white"
         variants={fadeInAnimationsVariants}
         initial={isVisible ? "animate" : "initial"}
         animate={isVisible ? "animate" : "initial"}
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
       >
         Contact
       </motion.h2>
-      <div className="flex flex-col justify-center items-center gap-3">
+      <div className="flex flex-col items-center justify-center gap-3">
         <motion.p
           className="text-white"
           variants={fadeInAnimationsVariants}
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
         >
           {staticTitle}
         </motion.p>
-        <ul className="flex gap-3 justify-center items-center flex-wrap">
+        <ul className="flex flex-wrap items-center justify-center gap-3">
           {badgeLinks.map((badge, index) => (
             <motion.li
               key={index}
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
             >
               <Link href={badge.href} target="_blank">
                 <Badge
-                  className="p-2 px-3 rounded-full text-sm font-medium"
+                  className="rounded-full p-2 px-3 text-sm font-medium"
                   variant="destructive"
                 >
                   <i className="mr-2">{badge.icon}</i>

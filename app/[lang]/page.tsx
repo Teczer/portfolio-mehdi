@@ -35,7 +35,7 @@ export default async function Home({
   const { navigation, mainView, projects, footer } = await getDictionary(lang);
 
   return (
-    <main className="min-h-full max-w-6xl m-auto px-4 relative">
+    <main className="relative m-auto min-h-full max-w-6xl px-4">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -44,7 +44,7 @@ export default async function Home({
       <div className="relative min-h-full">
         <Header navigation={navigation} />
         <MainView mainView={mainView} />
-        <div className="flex flex-col items-center gap-12 mt-16 sm:mt-0 sm:gap-24">
+        <div className="mt-16 flex flex-col items-center gap-12 sm:mt-0 sm:gap-24">
           <Skills />
           <Projects projects={projects} />
           <Contact />

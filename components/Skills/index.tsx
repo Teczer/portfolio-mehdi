@@ -53,7 +53,7 @@ const Skills: React.FC = () => {
             <Image
               src={figmaGradient}
               alt="/figma-gradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -75,7 +75,7 @@ const Skills: React.FC = () => {
             <Image
               src={reactGradient}
               alt="reactGradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -88,7 +88,7 @@ const Skills: React.FC = () => {
             <Image
               src={shadcn}
               alt="shadcn"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -100,7 +100,7 @@ const Skills: React.FC = () => {
             <Image
               src={typescriptGradient}
               alt="typescriptGradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -122,7 +122,7 @@ const Skills: React.FC = () => {
             <Image
               src={expressGradient}
               alt="expressGradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -139,7 +139,7 @@ const Skills: React.FC = () => {
             <Image
               src={nodejsGradient}
               alt="nodejsGradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -165,7 +165,7 @@ const Skills: React.FC = () => {
             <Image
               src={dockerGradient}
               alt="docker-gradient"
-              className="w-5 h-5"
+              className="size-5"
               width={20}
               height={20}
             />
@@ -209,7 +209,7 @@ const Skills: React.FC = () => {
 
   return (
     <div className="w-full" id="skills" ref={ref}>
-      <h2 className="text-4xl text-center text-white font-bold mb-10">
+      <h2 className="mb-10 text-center text-4xl font-bold text-white">
         {mainTitle}
       </h2>
 
@@ -218,17 +218,17 @@ const Skills: React.FC = () => {
         {SkillsSection.map((skill, index) => {
           return (
             <div
-              className="hidden sm:flex flex-col items-center justify-start"
+              className="hidden flex-col items-center justify-start sm:flex"
               key={index}
             >
-              <h3 className="text-white text-2xl font-bold mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-white">
                 {skill.title}
               </h3>
               <ul className="flex flex-col gap-2 text-white">
                 {skill.skills.map((skill, index) => {
                   return (
                     <motion.li
-                      className="flex justify-start text-lg items-center gap-2"
+                      className="flex items-center justify-start gap-2 text-lg"
                       key={index}
                       variants={fadeInAnimationsVariants}
                       initial={isVisible ? "animate" : "initial"}
@@ -254,17 +254,17 @@ const Skills: React.FC = () => {
         {filteredSkillsSections.map((skill, index) => {
           return (
             <div
-              className="mb-10 flex flex-col justify-self-center items-start justify-start sm:hidden "
+              className="mb-10 flex flex-col items-start justify-start justify-self-center sm:hidden "
               key={index}
             >
-              <h3 className="text-white text-2xl font-bold mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-white">
                 {skill.title}
               </h3>
               <ul className="flex flex-col gap-2 text-white">
                 {skill.skills.map((skill, index) => {
                   return (
                     <motion.li
-                      className="flex justify-start text-lg items-center gap-2"
+                      className="flex items-center justify-start gap-2 text-lg"
                       key={index}
                       variants={fadeInAnimationsVariants}
                       initial={isVisible ? "animate" : "initial"}

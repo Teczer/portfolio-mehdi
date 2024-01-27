@@ -33,16 +33,16 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <header>
-      <div className="items-center justify-between flex py-4">
+      <div className="flex items-center justify-between py-4">
         <LocaleSwitcher />
         {/* DESKTOP SECTION */}
         <nav>
-          <ul className="hidden sm:flex items-center gap-8">
+          <ul className="hidden items-center gap-8 sm:flex">
             {navigationItems.map((value, index) => {
               return (
                 <li key={index}>
                   <Link className="flex gap-2" href={value.href}>
-                    <span className="text-primary font-mono">{index}.</span>
+                    <span className="font-mono text-primary">{index}.</span>
                     <span className="text-white">{value.title}</span>
                   </Link>
                 </li>
@@ -55,21 +55,21 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
           className="text-white sm:hidden"
           onClick={() => setBurger(true)}
         >
-          <RxHamburgerMenu className="w-10 h-10" />
+          <RxHamburgerMenu className="size-10" />
         </button>
         {burger && (
           <div className="fixed inset-0 z-10 backdrop-blur-sm">
-            <nav className="w-2/4 flex flex-col items-end h-full animate-swipeFromLeft justify-center gap-8 p-8 bg-paper1 ml-auto">
+            <nav className="animate-swipeFromLeft bg-paper1 ml-auto flex h-full w-2/4 flex-col items-end justify-center gap-8 p-8">
               <button
                 onClick={() => setBurger(false)}
-                className="absolute top-4 right-4"
+                className="absolute right-4 top-4"
               >
-                <RxCross2 className="text-white w-8 h-8" />
+                <RxCross2 className="size-8 text-white" />
               </button>
               <Image
                 src="/Mehdoche.jpg"
                 alt="Mehdi HATTOU"
-                className="rounded-full w-auto h-auto"
+                className="size-auto rounded-full"
                 width={80}
                 height={80}
               />
@@ -82,7 +82,7 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
                         href={value.href}
                         onClick={() => setBurger(false)}
                       >
-                        <span className="text-primary font-mono">{index}.</span>
+                        <span className="font-mono text-primary">{index}.</span>
                         <span className="text-white">{value.title}</span>
                       </Link>
                     </li>

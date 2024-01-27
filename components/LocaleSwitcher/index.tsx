@@ -28,7 +28,7 @@ export default function LocaleSwitcher() {
               <Image
                 src={locale === "fr" ? franceFlag : ukFlag}
                 alt={`${locale}-flag`}
-                className="w-10 h-10 transition-all hover:scale-110"
+                className="size-10 transition-all hover:scale-110"
                 width={80}
                 height={80}
                 priority
