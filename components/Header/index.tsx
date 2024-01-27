@@ -6,24 +6,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import LocaleSwitcher from "../LocaleSwitcher";
 
 interface HeaderNavigation {
   title: string;
   href: string;
 }
 
-const Header: React.FC = () => {
-  const navigation: HeaderNavigation[] = [
+const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
+  const navigationItems: HeaderNavigation[] = [
     {
-      title: "Compétences",
+      title: navigation.skills,
       href: "#skills",
     },
     {
-      title: "Projets",
+      title: navigation.projects,
       href: "#projects",
     },
     {
-      title: "Contact",
+      title: navigation.contact,
       href: "#contact",
     },
   ];
@@ -33,18 +34,11 @@ const Header: React.FC = () => {
   return (
     <header>
       <div className="items-center justify-between flex py-4">
-        <Image
-          src="/Mehdoche.jpg"
-          alt="Mehdi HATTOU"
-          className="rounded-full w-auto h-auto"
-          width={40}
-          height={40}
-          priority
-        />
+        <LocaleSwitcher />
         {/* DESKTOP SECTION */}
         <nav>
           <ul className="hidden sm:flex items-center gap-8">
-            {navigation.map((value, index) => {
+            {navigationItems.map((value, index) => {
               return (
                 <li key={index}>
                   <Link className="flex gap-2" href={value.href}>
@@ -80,7 +74,7 @@ const Header: React.FC = () => {
                 height={80}
               />
               <ul className="flex flex-col items-baseline gap-8">
-                {navigation.map((value, index) => {
+                {navigationItems.map((value, index) => {
                   return (
                     <li key={index}>
                       <Link

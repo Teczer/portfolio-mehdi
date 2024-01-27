@@ -48,7 +48,7 @@ const CarouselProject: React.FC<CarouselProps> = ({
           <IoMdPhotos />
         </i>
       </DialogTrigger>
-      <DialogContent className="p-20">
+      <DialogContent className="p-16 sm:p-0">
         {/* DESKTOP */}
         <Carousel
           setApi={setApi}

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 17% 8%;
+    --foreground: 10 86% 89%;
+
+    --card: 5 48% 15%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 350 100% 91%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 348 75% 59%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 9 49% 35%;
+    --input: 0 0% 89.8%;
+    --ring: 9 49% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* GRADIENT TEXT */
+
+.gradient-primary {
+  background: linear-gradient(92.72deg, #e54d2e 0%, #d6409f 100%);
+  -webkit-background1-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.bg-paper1 {
+  --tw-bg-opacity: 1;
+  background-color: #181111;
+}
+
+/* BURGER MENU */
+
+@keyframes swipeFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-swipeFromLeft {
+  animation: swipeFromRight 0.2s ease-out;
+}
+
+/* SVG-FOOTER */
+
+.ring {
+  fill: none;
+  stroke-dasharray: 720 180;
+  stroke-linecap: round;
+  stroke: hsl(348 75% 59%);
+  stroke-width: 20px;
+  animation: progress 3s linear normal infinite;
+}
+.left {
+  transform: translate(100px, 0) rotate(90deg);
+}
+.right {
+  transform: translate(100px, 200px) rotate(-90deg);
+  animation-delay: 1.5s;
+  animation-direction: reverse;
+}
+
+@keyframes progress {
+  0%,
+  10% {
+    stroke-dashoffset: 100;
+  }
+  90%,
+  100% {
+    stroke-dashoffset: -900;
+  }
+}

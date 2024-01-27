@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import {
@@ -22,7 +23,8 @@ import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
-import Image from "next/image";
+
+import shadcn from "@/public/shadcn.svg";
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -39,21 +41,20 @@ interface ProjectsList {
   mobileGif?: string[];
 }
 
-const Projects: React.FC = () => {
+const Projects: React.FC<{ projects: any }> = ({ projects }) => {
   // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
       icon: "🎶",
       title: "Spotify Max +",
-      description:
-        "Projet avancé de Spotify réalisé en collaboration avec mon grand-frère, initiateur et lead du projet. Explorez de nouvelles fonctionnalités et une expérience utilisateur améliorée.",
+      description: projects.spotify,
       skills: [
         {
           icon: <SiNextdotjs />,
           label: "NextJS",
         },
         {
-          icon: <Image src="/shadcn.svg" alt="shadcn" width={12} height={12} />,
+          icon: <Image src={shadcn} alt="shadcn" width={12} height={12} />,
           label: "shadcn-ui",
         },
         {
@@ -78,8 +79,7 @@ const Projects: React.FC = () => {
     {
       icon: "🏗️",
       title: "New-Delhi",
-      description:
-        "CMS Builder interne SAAS pour Carrefour Voyages, spécialisé dans la création rapide de newsletters.",
+      description: projects.newDelhi,
       skills: [
         {
           icon: <FaReact />,
@@ -107,8 +107,7 @@ const Projects: React.FC = () => {
       icon: "🌌",
       url: "https://asteriaspace.fr/",
       title: "Asteria",
-      description:
-        "Apprendre les notions les plus complexes de d'astonomie de manière ludique et accompagné, avec à la clé des récompenses et une collection de cartes !",
+      description: projects.asteria,
       skills: [
         {
           icon: <FaReact />,
@@ -132,8 +131,7 @@ const Projects: React.FC = () => {
       icon: "✈️",
       url: "https://voyages.carrefour.fr/",
       title: "Carrefour Voyages",
-      description:
-        "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
+      description: projects.carrefourVoyages,
       skills: [
         {
           icon: <SiTypescript />,
@@ -153,8 +151,7 @@ const Projects: React.FC = () => {
       icon: "📖",
       url: "https://reading-demo.vercel.app/",
       title: "Reading",
-      description:
-        "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)",
+      description: projects.reading,
       skills: [
         {
           icon: <SiNextdotjs />,
@@ -189,7 +186,7 @@ const Projects: React.FC = () => {
   return (
     <div className="w-full" id="projects" ref={ref}>
       <h2 className="text-4xl text-center text-white font-bold mb-10">
-        Projets
+        {projects.mainTitle}
       </h2>
       {/* MAIN SECTION */}
       <div className="gap-8 flex flex-wrap items-start justify-start">

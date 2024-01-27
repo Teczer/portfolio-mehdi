@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import {
   SiNginx,
@@ -17,6 +18,15 @@ import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+// Import des images pour les icônes des technologies
+import figmaGradient from "@/public/figma-gradient.svg";
+import reactGradient from "@/public/react-gradient.svg";
+import shadcn from "@/public/shadcn.svg";
+import typescriptGradient from "@/public/typescript-gradient.svg";
+import expressGradient from "@/public/express-gradient.svg";
+import nodejsGradient from "@/public/nodejs-gradient.svg";
+import dockerGradient from "@/public/docker-gradient.svg";
+
 interface Skill {
   icon: React.ReactNode;
   label: string;
@@ -29,6 +39,11 @@ interface SkillsSection {
 }
 
 const Skills: React.FC = () => {
+  const pathname = usePathname();
+
+  const others = pathname === "/fr" ? "Autres" : "Others";
+  const mainTitle = pathname === "/fr" ? "Compétences" : "Skills";
+
   const SkillsSection: SkillsSection[] = [
     {
       title: "Design",
@@ -36,7 +51,7 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/figma-gradient.svg"
+              src={figmaGradient}
               alt="/figma-gradient"
               className="w-5 h-5"
               width={20}
@@ -58,8 +73,8 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/react-gradient.svg"
-              alt="/react-gradient"
+              src={reactGradient}
+              alt="reactGradient"
               className="w-5 h-5"
               width={20}
               height={20}
@@ -71,7 +86,7 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/shadcn.svg"
+              src={shadcn}
               alt="shadcn"
               className="w-5 h-5"
               width={20}
@@ -83,8 +98,8 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/typescript-gradient.svg"
-              alt="/typescript-gradient"
+              src={typescriptGradient}
+              alt="typescriptGradient"
               className="w-5 h-5"
               width={20}
               height={20}
@@ -105,8 +120,8 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/express-gradient.svg"
-              alt="/express-gradient"
+              src={expressGradient}
+              alt="expressGradient"
               className="w-5 h-5"
               width={20}
               height={20}
@@ -122,8 +137,8 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/nodejs-gradient.svg"
-              alt="/nodejs-gradient"
+              src={nodejsGradient}
+              alt="nodejsGradient"
               className="w-5 h-5"
               width={20}
               height={20}
@@ -139,7 +154,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      title: "Autres",
+      title: others,
       skills: [
         {
           icon: <FaGithub />,
@@ -148,8 +163,8 @@ const Skills: React.FC = () => {
         {
           icon: (
             <Image
-              src="/docker-gradient.svg"
-              alt="/docker-gradient"
+              src={dockerGradient}
+              alt="docker-gradient"
               className="w-5 h-5"
               width={20}
               height={20}
@@ -195,7 +210,7 @@ const Skills: React.FC = () => {
   return (
     <div className="w-full" id="skills" ref={ref}>
       <h2 className="text-4xl text-center text-white font-bold mb-10">
-        Compétences
+        {mainTitle}
       </h2>
 
       <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">

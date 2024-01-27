@@ -1,4 +1,4 @@
-const Footer: React.FC = () => {
+const Footer: React.FC<{ footer: any }> = ({ footer }) => {
   return (
     <footer className="flex flex-col gap-4 items-center my-8">
       <div className="mt-10 mb-5">
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           </svg>
         </div>
       </div>
-      <p className="text-base text-white">Conçu et réalisé par Mehdi Hattou.</p>
+      <p className="text-base text-white">{footer.author}</p>
       <p className="text-base text-white">©Copyright 2024 - Mehdi Hattou</p>
     </footer>
   );

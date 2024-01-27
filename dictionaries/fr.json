@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "mainView": {
+    "salutation": "Hey! Je suis -",
+    "jobTitle": "Développeur Web.",
+    "jobDescription": " Partageant une forte affinité avec React, basé à Paris."
+  },
+  "projects": {
+    "mainTitle": "Projets",
+    "spotify": "Projet avancé de Spotify réalisé en collaboration avec mon grand-frère, initiateur et lead du projet. Explorez de nouvelles fonctionnalités et une expérience utilisateur améliorée.",
+    "newDelhi": "CMS Builder interne SAAS pour Carrefour Voyages, spécialisé dans la création rapide de newsletters.",
+    "asteria": "Apprendre les notions les plus complexes de d'astonomie de manière ludique et accompagné, avec à la clé des récompenses et une collection de cartes !",
+    "carrefourVoyages": "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
+    "reading": "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)"
+  },
+  "footer": {
+    "author": "Conçu et réalisé par Mehdi Hattou."
+  }
+}

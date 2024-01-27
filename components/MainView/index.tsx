@@ -13,7 +13,9 @@ import { useInView } from "react-intersection-observer";
 
 import { useContactBadge } from "@/hooks/useContactBadge";
 
-const MainView: React.FC = () => {
+import point from "@/public/point-bg.svg";
+
+const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
   const badgeLinks = useContactBadge;
 
   const [ref, inView] = useInView({ triggerOnce: false });
@@ -55,7 +57,7 @@ const MainView: React.FC = () => {
             custom={0}
           >
             <Image
-              src="/point-bg.svg"
+              src={point}
               alt="Mehdi HATTOU"
               className="absolute top-[-16px] left-[-16px] z-[-1]"
               width={120}
@@ -70,7 +72,7 @@ const MainView: React.FC = () => {
             custom={0}
             className="text-primary text-2xl font-bold relative right-2 gradient-primary"
           >
-            Hey! Je suis -
+            {mainView.salutation}
           </motion.p>
           <motion.h1
             variants={fadeInAnimationsVariants}
@@ -88,8 +90,8 @@ const MainView: React.FC = () => {
             custom={2}
             className="text-[clamp(1.5rem,1.3vw+1rem,2.6rem)] text-white sm:mt-4"
           >
-            <b>Développeur Web.</b> Partageant une forte affinité avec React,
-            basé à Paris.
+            <b>{mainView.jobTitle}</b>
+            {mainView.jobDescription}
           </motion.p>
         </div>
         <ul className="flex gap-3 flex-wrap">
