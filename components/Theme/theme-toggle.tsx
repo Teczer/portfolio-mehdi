@@ -44,6 +44,12 @@ export function ThemeToggle() {
             <p>🍇</p>
           </div>
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("blue")}>
+          <div className="flex w-full items-center justify-between px-3">
+            <p>Cobalt</p>
+            <p>🌀</p>
+          </div>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

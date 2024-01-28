@@ -73,7 +73,7 @@
   --primary: 131 50% 63%; /* #11 GRASS */
   --primary-foreground: 0 0% 100%;
   --secondary: 172 85% 38%; /* #10 TEAL */
-  --secondary-foreground: 111 1% 77%;
+  --secondary-foreground: 0 0% 100%; /* WHITE */
   --accent: 155 69% 95%; /* #13 JADE */
   --accent-foreground: 0 0% 9%; /* BLACK */
   --destructive: 164 64% 42%; /* #10 JADE */
@@ -97,8 +97,8 @@
   --popover-foreground: 0 0% 3.9%; /* BLACK */
   --primary: 350 100% 91%; /* CRIMSON 11.5 */
   --primary-foreground: 0 0% 98%;
-  --secondary: 348 75% 59%; /* WHITE */
-  --secondary-foreground: 0 0% 9%; /* BLACK */
+  --secondary: 348 75% 59%; /* CRIMSON 10 */
+  --secondary-foreground: 0 0% 100%; /* WHITE */
   --muted: 0 0% 96.1%; /* WHITE */
   --muted-foreground: 0 0% 63.9%; /* GRAY */
   --accent: 9 100% 97%;
@@ -124,7 +124,7 @@
   --primary: 53 90% 62%; /* #11 LIME */
   --primary-foreground: 0 0% 100%; /* WHITE */
   --secondary: 46 100% 54%; /* #11 AMBER */
-  --secondary-foreground: 111 1% 77%;
+  --secondary-foreground: 0 0% 9%; /* BLACK */
   --accent: 41 100% 97%; /* #13 AMBER */
   --accent-foreground: 0 0% 9%; /* BLACK */
   --destructive: 50 100% 52%; /* #10 AMBER */
@@ -150,7 +150,7 @@
   --primary: 292 79% 77%; /* #11 PLUM */
   --primary-foreground: 0 0% 100%; /* WHITE */
   --secondary: 246 100% 83%; /* #11 IRIS */
-  --secondary-foreground: 111 1% 77%;
+  --secondary-foreground: 0 0% 100%; /* WHITE */
   --accent: 242, 94%, 97%; /* #13 IRIS */
   --accent-foreground: 0 0% 9%; /* BLACK */
   --destructive: 242 64% 64%; /* #10 IRIS */
@@ -163,6 +163,31 @@
   --radius: 0.5rem;
   --first-gradient: 246 100% 83%; /* #11 IRIS */
   --second-gradient: 292, 79%, 77%; /* #11 PLUM */
+}
+
+[data-theme="blue"] {
+  --background: 234 84% 10%;
+  --foreground: 206 69% 90%;
+  --card: 233 60% 17%;
+  --card-foreground: 0 0% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 184 99% 58%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 184 99% 58%;
+  --secondary-foreground: 0 0% 9%; /* BLACK */
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 206 69% 90%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 222 65% 42%;
+  --destructive-foreground: 0 0% 100%; /* WHITE */
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+  --radius: 0.5rem;
+  --first-gradient: 184 99% 58%; /* #11 IRIS */
+  --second-gradient: 250 80% 65%; /* #11 PLUM */
 }
 
 /* GRADIENT TEXT */
