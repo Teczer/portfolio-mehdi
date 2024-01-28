@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import { useContactBadge } from "@/hooks/useContactBadge";
@@ -26,6 +26,22 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
     setIsVisible(inView);
   }, [inView]);
 
+  const controls = useAnimation();
+
+  const handleHoverStart = () => {
+    controls.start({
+      rotate: 360,
+      transition: { duration: 0.2 },
+    });
+  };
+
+  const handleHoverEnd = () => {
+    controls.start({
+      rotate: 0,
+      transition: { duration: 0.2 },
+    });
+  };
+
   return (
     <section
       ref={ref}
@@ -38,14 +54,21 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
           animate={isVisible ? "animate" : "initial"}
           custom={0}
         >
-          <Image
-            src="/Mehdoche.jpg"
-            alt="Mehdi HATTOU"
-            className="size-auto rounded-full"
-            width={400}
-            height={400}
-            priority
-          />
+          <motion.div
+            onHoverStart={handleHoverStart}
+            onHoverEnd={handleHoverEnd}
+            animate={controls}
+            className="rounded-full"
+          >
+            <Image
+              src="/Mehdoche.jpg"
+              alt="Mehdi HATTOU"
+              className="size-auto rounded-full"
+              width={400}
+              height={400}
+              priority
+            />
+          </motion.div>
         </motion.div>
       </div>
       <div className="flex w-full flex-col gap-6 sm:gap-10">

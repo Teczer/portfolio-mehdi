@@ -150,7 +150,7 @@
   --primary: 292 79% 77%; /* #11 PLUM */
   --primary-foreground: 0 0% 100%; /* WHITE */
   --secondary: 246 100% 83%; /* #11 IRIS */
-  --secondary-foreground: 0 0% 100%; /* WHITE */
+  --secondary-foreground: 0 0% 9%; /* BLACK */
   --accent: 242, 94%, 97%; /* #13 IRIS */
   --accent-foreground: 0 0% 9%; /* BLACK */
   --destructive: 242 64% 64%; /* #10 IRIS */
