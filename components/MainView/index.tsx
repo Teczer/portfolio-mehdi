@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 
 import { useContactBadge } from "@/hooks/useContactBadge";
 
-import point from "@/public/point-bg.svg";
+import { PointBg } from "../Svg";
 
 const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
   const badgeLinks = useContactBadge;
@@ -56,14 +56,9 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             animate={isVisible ? "animate" : "initial"}
             custom={0}
           >
-            <Image
-              src={point}
-              alt="Mehdi HATTOU"
-              className="absolute left-[-16px] top-[-16px] z-[-1]"
-              width={120}
-              height={120}
-              priority
-            />
+            <div className="absolute left-[-16px] top-[-16px] z-[-1]">
+              <PointBg />
+            </div>
           </motion.div>
           <motion.p
             variants={fadeInAnimationsVariants}

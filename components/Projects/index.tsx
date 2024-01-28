@@ -24,7 +24,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
 
-import shadcn from "@/public/shadcn.svg";
 import { ShadcnLogo } from "../Svg";
 
 interface ProjectSkills {
@@ -195,7 +194,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         {projectList.map((project, index) => {
           return (
             <motion.div
-              className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl min-w-80"
+              className="flex h-auto min-w-80 flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
               key={index}
               variants={fadeInAnimationsVariants}
               initial={isVisible ? "animate" : "initial"}
@@ -259,7 +258,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
           {subProjectList.map((project, index) => {
             return (
               <motion.div
-                className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl min-w-80"
+                className="flex h-auto min-w-80 flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
                 key={index}
                 variants={fadeInAnimationsVariants}
                 initial={isVisible ? "animate" : "initial"}
