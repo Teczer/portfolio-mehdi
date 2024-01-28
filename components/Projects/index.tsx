@@ -195,7 +195,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         {projectList.map((project, index) => {
           return (
             <motion.div
-              className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
+              className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl min-w-80"
               key={index}
               variants={fadeInAnimationsVariants}
               initial={isVisible ? "animate" : "initial"}
@@ -235,7 +235,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                   return (
                     <li key={index}>
                       <Badge
-                        className="rounded-full text-xs font-medium"
+                        className="rounded-full text-xs font-bold"
                         variant="project"
                       >
                         <i className="mr-2 size-3">{skill.icon}</i>
@@ -259,7 +259,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
           {subProjectList.map((project, index) => {
             return (
               <motion.div
-                className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl"
+                className="flex h-auto flex-1 flex-col gap-3 rounded-lg border bg-card p-6 shadow-2xl min-w-80"
                 key={index}
                 variants={fadeInAnimationsVariants}
                 initial={isVisible ? "animate" : "initial"}
@@ -299,7 +299,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                     return (
                       <li key={index}>
                         <Badge
-                          className="rounded-full text-xs font-medium"
+                          className="rounded-full text-xs font-bold"
                           variant="project"
                         >
                           <i className="mr-2">{skill.icon}</i>
