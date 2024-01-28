@@ -9,8 +9,42 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+interface ThemeSchemes {
+  label: string;
+  icon: string;
+  theme: string;
+}
+
 export function ThemeToggle() {
   const { setTheme } = useTheme();
+
+  const themeSchemes: ThemeSchemes[] = [
+    {
+      label: "Tomato",
+      icon: "🍅",
+      theme: "red",
+    },
+    {
+      label: "Jade",
+      icon: "🍀",
+      theme: "green",
+    },
+    {
+      label: "Amber",
+      icon: "🌕",
+      theme: "yellow",
+    },
+    {
+      label: "Iris",
+      icon: "🍇",
+      theme: "purple",
+    },
+    {
+      label: "Indigo",
+      icon: "🌌",
+      theme: "blue",
+    },
+  ];
 
   return (
     <DropdownMenu>
@@ -20,36 +54,16 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("red")}>
-          <div className="flex w-full items-center justify-between px-3">
-            <p>Tomato</p>
-            <p>🍅</p>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("green")}>
-          <div className="flex w-full items-center justify-between px-3">
-            <p>Jade</p>
-            <p>🍀</p>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("yellow")}>
-          <div className="flex w-full items-center justify-between px-3">
-            <p>Amber</p>
-            <p>🍂</p>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("purple")}>
-          <div className="flex w-full items-center justify-between px-3">
-            <p>Iris</p>
-            <p>🍇</p>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("blue")}>
-          <div className="flex w-full items-center justify-between px-3">
-            <p>Cobalt</p>
-            <p>🌀</p>
-          </div>
-        </DropdownMenuItem>
+        {themeSchemes.map((theme, index) => {
+          return (
+            <DropdownMenuItem onClick={() => setTheme(theme.theme)} key={index}>
+              <div className="flex w-full items-center justify-between px-3">
+                <p>{theme.label}</p>
+                <p>{theme.icon}</p>
+              </div>
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );
