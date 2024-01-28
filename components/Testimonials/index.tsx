@@ -89,7 +89,7 @@ const Testimonials: React.FC<{ testimonial: TestimonialProps }> = ({
         {projectList.map((project, index) => {
           return (
             <motion.div
-              className="flex h-auto flex-1 gap-3 rounded-lg border bg-card px-3 py-6 shadow-2xl sm:min-w-80 sm:p-6"
+              className="flex h-auto min-w-80 flex-1 gap-3 rounded-lg border bg-card px-3 py-6 shadow-2xl sm:p-6"
               key={index}
               variants={fadeInAnimationsVariants}
               initial={isVisible ? "animate" : "initial"}

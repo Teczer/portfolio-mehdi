@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
       </motion.h2>
       <div className="flex flex-col items-center justify-center gap-3">
         <motion.p
-          className="text-accent"
+          className="text-accent text-center"
           variants={fadeInAnimationsVariants}
           initial={isVisible ? "animate" : "initial"}
           animate={isVisible ? "animate" : "initial"}
