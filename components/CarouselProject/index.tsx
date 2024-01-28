@@ -39,7 +39,7 @@ const CarouselProject: React.FC<CarouselProps> = ({
     <Dialog>
       <DialogTrigger
         className={cn(
-          "text-white cursor-pointer scale-125 transition-all hover:scale-150",
+          "text-accent cursor-pointer scale-125 transition-all hover:scale-150",
           mobileGif?.length === undefined && "hidden sm:block"
         )}
         aria-label="modal"

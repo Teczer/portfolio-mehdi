@@ -25,6 +25,7 @@ import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
 
 import shadcn from "@/public/shadcn.svg";
+import { ShadcnLogo } from "../Svg";
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -54,7 +55,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
           label: "NextJS",
         },
         {
-          icon: <Image src={shadcn} alt="shadcn" width={12} height={12} />,
+          icon: <ShadcnLogo />,
           label: "shadcn-ui",
         },
         {
@@ -185,7 +186,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
 
   return (
     <div className="w-full" id="projects" ref={ref}>
-      <h2 className="mb-10 text-center text-4xl font-bold text-white">
+      <h2 className="mb-10 text-center text-4xl font-bold text-accent">
         {projects.mainTitle}
       </h2>
       {/* MAIN SECTION */}
@@ -214,7 +215,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                     <Link
                       href={project.url}
                       target="_blank"
-                      className="text-white transition-all hover:scale-125"
+                      className="text-accent transition-all hover:scale-125"
                       aria-label={project.title}
                     >
                       <FaExternalLinkAlt />
@@ -222,7 +223,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                   )}
                 </div>
               </div>
-              <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight text-accent">
                 {project.title}
               </h3>
               <p className="text-sm text-muted-foreground">
@@ -249,7 +250,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         })}
       </div>
       {/* SUB SECTION */}
-      <div className="mt-6 flex w-full items-center justify-center text-white">
+      <div className="mt-6 flex w-full items-center justify-center text-accent">
         <div
           className="flex flex-wrap items-start justify-start gap-8"
           ref={ref}
@@ -278,7 +279,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                       <Link
                         href={project.url}
                         target="_blank"
-                        className="text-white transition-all hover:scale-125"
+                        className="text-accent transition-all hover:scale-125"
                         aria-label={project.title}
                       >
                         <FaExternalLinkAlt />
@@ -286,7 +287,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                     )}
                   </div>
                 </div>
-                <h3 className="text-2xl font-semibold leading-none tracking-tight text-white">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight text-accent">
                   {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">

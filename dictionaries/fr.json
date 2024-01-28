@@ -2,7 +2,7 @@
   "navigation": {
     "skills": "Compétences",
     "projects": "Projets",
-    "recommendations": "Recommendations",
+    "recommendations": "Recommandations",
     "contact": "Contact"
   },
   "mainView": {
@@ -19,6 +19,7 @@
     "reading": "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)"
   },
   "testimonial": {
+    "sectionTitle": "Recommandations",
     "van": {
       "title": "Lead Developer chez Carrefour",
       "hierarchy": "Le 25 janvier 2024, Van Hoi était le/la manger direct(e) de Mehdi",

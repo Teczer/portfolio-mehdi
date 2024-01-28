@@ -29,7 +29,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
   return (
     <section
       ref={ref}
-      className="flex h-[calc(100svh-40px-32px)] flex-col items-center justify-center gap-10 px-4 py-56 text-white sm:flex-row-reverse"
+      className="flex h-[calc(100svh-40px-32px)] flex-col items-center justify-center gap-10 px-4 py-56 text-accent sm:flex-row-reverse"
     >
       <div className="size-44 sm:size-fit">
         <motion.div
@@ -88,7 +88,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
             initial={isVisible ? "animate" : "initial"}
             animate={isVisible ? "animate" : "initial"}
             custom={2}
-            className="text-[clamp(1.5rem,1.3vw+1rem,2.6rem)] text-white sm:mt-4"
+            className="text-[clamp(1.5rem,1.3vw+1rem,2.6rem)] text-accent sm:mt-4"
           >
             <b>{mainView.jobTitle}</b>
             {mainView.jobDescription}

@@ -28,6 +28,7 @@ interface ProjectsList {
 }
 
 interface TestimonialProps {
+  sectionTitle: string;
   van: {
     title: string;
     hierarchy: string;
@@ -79,8 +80,8 @@ const Testimonials: React.FC<{ testimonial: TestimonialProps }> = ({
 
   return (
     <div className="w-full" id="recommendations" ref={ref}>
-      <h2 className="mb-10 text-center text-4xl font-bold text-white">
-        Recommendations
+      <h2 className="mb-10 text-center text-4xl font-bold text-accent">
+        {testimonial.sectionTitle}
       </h2>
       {/* MAIN SECTION */}
       <div className="flex flex-wrap items-start justify-start gap-8">
@@ -105,10 +106,10 @@ const Testimonials: React.FC<{ testimonial: TestimonialProps }> = ({
               <div className="flex flex-col items-start justify-start gap-2">
                 <div className="flex w-full items-center justify-between">
                   <div className="flex flex-col items-start justify-start gap-1">
-                    <h3 className="text-lg font-bold leading-none tracking-tight text-white sm:text-xl">
+                    <h3 className="text-lg font-bold leading-none tracking-tight text-accent sm:text-xl">
                       {project.name}
                     </h3>
-                    <h4 className="text-sm font-normal leading-none tracking-tight text-white">
+                    <h4 className="text-sm font-normal leading-none tracking-tight text-accent">
                       {project.title}
                     </h4>
                   </div>
@@ -136,7 +137,7 @@ const Testimonials: React.FC<{ testimonial: TestimonialProps }> = ({
                 <p className="text-sm font-medium text-muted-foreground">
                   {project.hierarchie}
                 </p>
-                <p className="text-sm text-white">{project.description}</p>
+                <p className="text-sm text-accent">{project.description}</p>
               </div>
             </motion.div>
           );

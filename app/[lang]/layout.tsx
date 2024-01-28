@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import { Locale, i18n } from "@/i18n.config";
 
-import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+
+import { ThemeProvider } from "@/components/Theme/theme-provider";
 
 import "./globals.css";
 
@@ -73,7 +75,15 @@ export default function RootLayout({
       lang={params.lang}
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="h-full bg-background">{children}</body>
+      <body className="h-full bg-background">
+        <ThemeProvider
+          defaultTheme="red"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

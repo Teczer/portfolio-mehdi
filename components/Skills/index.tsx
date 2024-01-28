@@ -19,13 +19,15 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Import des images pour les icônes des technologies
-import figmaGradient from "@/public/figma-gradient.svg";
-import reactGradient from "@/public/react-gradient.svg";
 import shadcn from "@/public/shadcn.svg";
-import typescriptGradient from "@/public/typescript-gradient.svg";
-import expressGradient from "@/public/express-gradient.svg";
-import nodejsGradient from "@/public/nodejs-gradient.svg";
-import dockerGradient from "@/public/docker-gradient.svg";
+import {
+  DockerGradient,
+  ExpressGradient,
+  FigmaGradient,
+  NodejsGradient,
+  ReactGradient,
+  TypescriptGradient,
+} from "../Svg";
 
 interface Skill {
   icon: React.ReactNode;
@@ -49,15 +51,7 @@ const Skills: React.FC = () => {
       title: "Design",
       skills: [
         {
-          icon: (
-            <Image
-              src={figmaGradient}
-              alt="/figma-gradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <FigmaGradient />,
           label: "figma",
           important: true,
         },
@@ -71,15 +65,7 @@ const Skills: React.FC = () => {
       title: "Front-end",
       skills: [
         {
-          icon: (
-            <Image
-              src={reactGradient}
-              alt="reactGradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <ReactGradient />,
           label: "react.js",
           important: true,
         },
@@ -96,15 +82,7 @@ const Skills: React.FC = () => {
           label: "shadcn-ui",
         },
         {
-          icon: (
-            <Image
-              src={typescriptGradient}
-              alt="typescriptGradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <TypescriptGradient />,
           label: "typescript",
           important: true,
         },
@@ -118,15 +96,7 @@ const Skills: React.FC = () => {
       title: "Back-end",
       skills: [
         {
-          icon: (
-            <Image
-              src={expressGradient}
-              alt="expressGradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <ExpressGradient />,
           label: "express",
           important: true,
         },
@@ -135,15 +105,7 @@ const Skills: React.FC = () => {
           label: "strapi",
         },
         {
-          icon: (
-            <Image
-              src={nodejsGradient}
-              alt="nodejsGradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <NodejsGradient />,
           label: "node.js",
           important: true,
         },
@@ -161,15 +123,7 @@ const Skills: React.FC = () => {
           label: "git & github",
         },
         {
-          icon: (
-            <Image
-              src={dockerGradient}
-              alt="docker-gradient"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
+          icon: <DockerGradient />,
           label: "Docker",
           important: true,
         },
@@ -209,7 +163,7 @@ const Skills: React.FC = () => {
 
   return (
     <div className="w-full" id="skills" ref={ref}>
-      <h2 className="mb-10 text-center text-4xl font-bold text-white">
+      <h2 className="mb-10 text-center text-4xl font-bold text-accent">
         {mainTitle}
       </h2>
 
@@ -221,10 +175,10 @@ const Skills: React.FC = () => {
               className="hidden flex-col items-center justify-start sm:flex"
               key={index}
             >
-              <h3 className="mb-4 text-2xl font-bold text-white">
+              <h3 className="mb-4 text-2xl font-bold text-accent">
                 {skill.title}
               </h3>
-              <ul className="flex flex-col gap-2 text-white">
+              <ul className="flex flex-col gap-2 text-accent">
                 {skill.skills.map((skill, index) => {
                   return (
                     <motion.li
@@ -257,10 +211,10 @@ const Skills: React.FC = () => {
               className="mb-10 flex flex-col items-start justify-start justify-self-center sm:hidden "
               key={index}
             >
-              <h3 className="mb-4 text-2xl font-bold text-white">
+              <h3 className="mb-4 text-2xl font-bold text-accent">
                 {skill.title}
               </h3>
-              <ul className="flex flex-col gap-2 text-white">
+              <ul className="flex flex-col gap-2 text-accent">
                 {skill.skills.map((skill, index) => {
                   return (
                     <motion.li

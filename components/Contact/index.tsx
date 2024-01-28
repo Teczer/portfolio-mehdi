@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
   return (
     <div className="w-full" id="contact" ref={ref}>
       <motion.h2
-        className="mb-10 text-center text-4xl font-bold text-white"
+        className="mb-10 text-center text-4xl font-bold text-accent"
         variants={fadeInAnimationsVariants}
         initial={isVisible ? "animate" : "initial"}
         animate={isVisible ? "animate" : "initial"}
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
       </motion.h2>
       <div className="flex flex-col items-center justify-center gap-3">
         <motion.p
-          className="text-white"
+          className="text-accent"
           variants={fadeInAnimationsVariants}
           initial={isVisible ? "animate" : "initial"}
           animate={isVisible ? "animate" : "initial"}
