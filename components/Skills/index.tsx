@@ -28,6 +28,7 @@ import {
   ReactGradient,
   TypescriptGradient,
 } from "../Svg";
+import { cn } from "@/lib/utils";
 
 interface Skill {
   icon: React.ReactNode;
@@ -38,6 +39,7 @@ interface Skill {
 interface SkillsSection {
   title: string;
   skills: Skill[];
+  order?: number;
 }
 
 const Skills: React.FC = () => {
@@ -49,6 +51,7 @@ const Skills: React.FC = () => {
   const SkillsSection: SkillsSection[] = [
     {
       title: "Design",
+      order: 3,
       skills: [
         {
           icon: <FigmaGradient />,
@@ -135,22 +138,6 @@ const Skills: React.FC = () => {
     },
   ];
 
-  const order = ["Back-end", "Front-end", "Autres", "Design"];
-
-  // Crée une copie du tableau SkillsSection avec slice()
-  const skillsCopy = SkillsSection.slice();
-
-  // Trie les sections
-  const sortedSkillsSections = skillsCopy.sort(
-    (a, b) => order.indexOf(a.title) - order.indexOf(b.title)
-  );
-
-  // Retire les compétences "MongoDB" et "SwiftUI"
-  const filteredSkillsSections = sortedSkillsSections.map((section) => ({
-    ...section,
-    skills: section.skills.filter((skill) => skill.label !== "MongoDB"),
-  }));
-
   // Framer motion
 
   const [ref, inView] = useInView({ triggerOnce: false });
@@ -166,49 +153,14 @@ const Skills: React.FC = () => {
       <h2 className="mb-10 text-center text-4xl font-bold text-accent">
         {mainTitle}
       </h2>
-
       <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
-        {/* DESKTOP SECTION */}
         {SkillsSection.map((skill, index) => {
           return (
             <div
-              className="hidden flex-col items-center justify-start sm:flex"
-              key={index}
-            >
-              <h3 className="mb-4 text-2xl font-bold text-accent">
-                {skill.title}
-              </h3>
-              <ul className="flex flex-col gap-2 text-accent">
-                {skill.skills.map((skill, index) => {
-                  return (
-                    <motion.li
-                      className="flex items-center justify-start gap-2 text-lg"
-                      key={index}
-                      variants={fadeInAnimationsVariants}
-                      initial={isVisible ? "animate" : "initial"}
-                      animate={isVisible ? "animate" : "initial"}
-                      custom={index + 1}
-                    >
-                      <i>{skill.icon}</i>
-                      <p
-                        className={`${
-                          skill.important && "gradient-primary font-bold"
-                        }`}
-                      >
-                        {skill.label}
-                      </p>
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            </div>
-          );
-        })}
-        {/* MOBILE SECTION */}
-        {filteredSkillsSections.map((skill, index) => {
-          return (
-            <div
-              className="mb-10 flex flex-col items-start justify-start justify-self-center sm:hidden "
+              className={cn(
+                "mb-10 flex flex-col items-start justify-start justify-self-center sm:order-1",
+                { "order-3": skill.title === "Design" }
+              )}
               key={index}
             >
               <h3 className="mb-4 text-2xl font-bold text-accent">

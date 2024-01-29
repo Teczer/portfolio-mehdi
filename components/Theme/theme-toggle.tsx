@@ -41,7 +41,7 @@ export function ThemeToggle() {
     },
     {
       label: "Indigo",
-      icon: "🌌",
+      icon: "🌊",
       theme: "blue",
     },
   ];
