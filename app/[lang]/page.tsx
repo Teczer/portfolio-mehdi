@@ -46,7 +46,7 @@ export default async function Home({
       <div className="relative min-h-full">
         <Header navigation={navigation} />
         <MainView mainView={mainView} />
-        <div className="mt-16 flex flex-col items-center gap-12 sm:mt-0 sm:gap-24">
+        <div className="mt-16 flex flex-col items-center gap-12 sm:mt-6 sm:gap-24">
           <Skills />
           <Projects projects={projects} />
           <Testimonials testimonial={testimonial} />

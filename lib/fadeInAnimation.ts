@@ -2,7 +2,7 @@
 export const fadeInAnimationsVariants = {
   initial: {
     opacity: 0,
-    y: 10,
+    y: 30,
   },
   animate: (index: number) => ({
     opacity: 1,
