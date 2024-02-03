@@ -23,6 +23,7 @@ export function middleware(request: NextRequest) {
 
   // Exclude paths for static files
   const excludePaths = [
+    "/valentine",
     "/manifest.json",
     "/android-chrome-192x192.png",
     "/android-chrome-512x512.png",

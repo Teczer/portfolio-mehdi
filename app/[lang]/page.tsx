@@ -51,7 +51,7 @@ export default async function Home({
           <Projects projects={projects} />
           <Testimonials testimonial={testimonial} />
           <Contact />
-          <Footer footer={footer} />
+          <Footer footer={footer} lang={lang} />
         </div>
       </div>
     </main>

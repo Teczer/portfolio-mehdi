@@ -1,4 +1,6 @@
-const Footer: React.FC<{ footer: any }> = ({ footer }) => {
+import Link from "next/link";
+
+const Footer: React.FC<{ footer: any; lang: any }> = ({ footer, lang }) => {
   return (
     <footer className="my-8 flex flex-col items-center gap-4">
       <div className="mb-5 mt-10">
@@ -17,7 +19,9 @@ const Footer: React.FC<{ footer: any }> = ({ footer }) => {
         </div>
       </div>
       <p className="text-base text-accent">{footer.author}</p>
-      <p className="text-base text-accent">©Copyright 2024 - Mehdi Hattou</p>
+      <Link href={`/${lang}/valentine`}>
+        <p className="text-base text-accent">©Copyright 2024 - Mehdi Hattou</p>
+      </Link>
     </footer>
   );
 };
