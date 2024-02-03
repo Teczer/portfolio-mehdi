@@ -8,6 +8,7 @@ import Link from "next/link";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import LocaleSwitcher from "../LocaleSwitcher";
 import { ThemeToggle } from "../Theme/theme-toggle";
+import { FloatingNavDemo } from "../FloatyNavbar";
 
 interface HeaderNavigation {
   title: string;
@@ -39,6 +40,7 @@ const Header: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <header>
       <div className="flex items-center justify-between py-4">
+        <FloatingNavDemo />
         <LocaleSwitcher />
         {/* DESKTOP SECTION */}
         <nav>
