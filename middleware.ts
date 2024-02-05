@@ -23,7 +23,6 @@ export function middleware(request: NextRequest) {
 
   // Exclude paths for static files
   const excludePaths = [
-    "/valentine",
     "/manifest.json",
     "/android-chrome-192x192.png",
     "/android-chrome-512x512.png",
@@ -59,7 +58,7 @@ export function middleware(request: NextRequest) {
     "/workbox-8817a5e5.js",
     "/workbox-8817a5e5.js.map",
     "/spotify",
-    "new-delhi",
+    "/new-delhi",
   ];
 
   if (excludePaths.some((path) => pathname.startsWith(path))) {
