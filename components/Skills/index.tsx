@@ -21,6 +21,7 @@ import { useInView } from "react-intersection-observer";
 // Import des images pour les icônes des technologies
 import shadcn from "@/public/shadcn.svg";
 import {
+  AwsGradient,
   DockerGradient,
   ExpressGradient,
   FigmaGradient,
@@ -122,12 +123,17 @@ const Skills: React.FC = () => {
       title: others,
       skills: [
         {
+          icon: <DockerGradient />,
+          label: "Docker",
+          important: true,
+        },
+        {
           icon: <FaGithub />,
           label: "git & github",
         },
         {
-          icon: <DockerGradient />,
-          label: "Docker",
+          icon: <AwsGradient />,
+          label: "AWS",
           important: true,
         },
         {
