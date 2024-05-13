@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import {
@@ -14,6 +13,7 @@ import {
   SiNextra,
   SiStrapi,
   SiTypescript,
+  SiReactquery,
 } from "react-icons/si";
 import { FaReact, FaDocker, FaJava, FaLess } from "react-icons/fa";
 
@@ -120,6 +120,30 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         {
           icon: <SiPostgresql />,
           label: "postgresql",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
+      icon: "🔴",
+      url: "https://spallian.mehdihattou.com/",
+      title: "PokéTec",
+      description: projects.poketec,
+      skills: [
+        {
+          icon: <FaReact />,
+          label: "react.js",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "Typescript",
         },
         {
           icon: <FaDocker />,
