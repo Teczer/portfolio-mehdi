@@ -14,6 +14,7 @@ import {
   SiStrapi,
   SiTypescript,
   SiReactquery,
+  SiSocketdotio,
 } from "react-icons/si";
 import { FaReact, FaDocker, FaJava, FaLess } from "react-icons/fa";
 
@@ -55,7 +56,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         },
         {
           icon: <ShadcnLogo />,
-          label: "shadcn-ui",
+          label: "Shadcn-ui",
         },
         {
           icon: <SiTailwindcss />,
@@ -83,15 +84,15 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       skills: [
         {
           icon: <FaReact />,
-          label: "react.js",
+          label: "React.js",
         },
         {
           icon: <SiStrapi />,
-          label: "strapi",
+          label: "Strapi.io",
         },
         {
           icon: <SiPostgresql />,
-          label: "postgresql",
+          label: "PostgreSQL",
         },
         {
           icon: <FaDocker />,
@@ -111,15 +112,43 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       skills: [
         {
           icon: <FaReact />,
-          label: "react.js",
+          label: "React.js",
         },
         {
           icon: <SiExpress />,
-          label: "express",
+          label: "Express.js",
         },
         {
           icon: <SiPostgresql />,
-          label: "postgresql",
+          label: "PostgreSQL",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
+      icon: "🌟",
+      url: "https://loltimeflash.com/",
+      title: "LolTimeFlash",
+      description: projects.loltimeflash,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "NextJS",
+        },
+        {
+          icon: <SiSocketdotio />,
+          label: "Socket.io",
+        },
+        {
+          icon: <SiExpress />,
+          label: "Express.js",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
         },
         {
           icon: <FaDocker />,
@@ -135,7 +164,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       skills: [
         {
           icon: <FaReact />,
-          label: "react.js",
+          label: "React.js",
         },
         {
           icon: <SiReactquery />,
@@ -143,31 +172,11 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         },
         {
           icon: <SiTypescript />,
-          label: "Typescript",
+          label: "TypeScript",
         },
         {
           icon: <FaDocker />,
           label: "Docker",
-        },
-      ],
-    },
-    {
-      icon: "✈️",
-      url: "https://voyages.carrefour.fr/",
-      title: "Carrefour Voyages",
-      description: projects.carrefourVoyages,
-      skills: [
-        {
-          icon: <SiTypescript />,
-          label: "Typescript",
-        },
-        {
-          icon: <FaJava />,
-          label: "Freemarker",
-        },
-        {
-          icon: <FaLess />,
-          label: "Less",
         },
       ],
     },
@@ -192,6 +201,26 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         {
           icon: <FaDocker />,
           label: "Docker",
+        },
+      ],
+    },
+    {
+      icon: "✈️",
+      url: "https://voyages.carrefour.fr/",
+      title: "Carrefour Voyages",
+      description: projects.carrefourVoyages,
+      skills: [
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+        },
+        {
+          icon: <FaJava />,
+          label: "Freemarker",
+        },
+        {
+          icon: <FaLess />,
+          label: "Less",
         },
       ],
     },
