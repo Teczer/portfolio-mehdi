@@ -59,6 +59,8 @@ export function middleware(request: NextRequest) {
     "/workbox-8817a5e5.js.map",
     "/spotify",
     "/new-delhi",
+    "/project-icons",
+    "/carrefour.png",
   ];
 
   if (excludePaths.some((path) => pathname.startsWith(path))) {

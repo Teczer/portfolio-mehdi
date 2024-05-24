@@ -4,28 +4,28 @@
 
 @layer base {
   :root {
-    --background: 0 17% 8%; /* #1 Tomato */
-    --foreground: 10 86% 89%; /* #12 Tomato */
-    --card: 5 48% 15%; /* #3 Tomato */
-    --card-foreground: 0 0% 3.9%; /* BLACK */
-    --popover: 0 0% 100%; /* WHITE */
-    --popover-foreground: 0 0% 3.9%; /* BLACK */
-    --primary: 350 100% 91%; /* CRIMSON 11.5 */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 348 75% 59%; /* WHITE */
+    --background: 234 84% 10%;
+    --foreground: 206 69% 90%;
+    --card: 233 60% 17%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 184 99% 58%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 184 99% 58%;
     --secondary-foreground: 0 0% 9%; /* BLACK */
-    --muted: 0 0% 96.1%; /* WHITE */
-    --muted-foreground: 0 0% 63.9%; /* GRAY */
-    --accent: 9 100% 97%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 206 69% 90%;
     --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 9 49% 35%;
-    --input: 9 49% 35%;
-    --ring: 9 49% 35%;
+    --destructive: 222 65% 42%;
+    --destructive-foreground: 0 0% 100%; /* WHITE */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
     --radius: 0.5rem;
-    --first-gradient: 10 78% 54%; /* #9 Tomato */
-    --second-gradient: 322 65% 55%;
+    --first-gradient: 184 99% 58%; /* #11 IRIS */
+    --second-gradient: 250 80% 65%; /* #11 PLUM */
   }
   .dark {
     --background: 0 17% 8%; /* #1 Tomato */

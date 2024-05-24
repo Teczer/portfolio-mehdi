@@ -11,6 +11,7 @@ import {
   SiPostgresql,
   SiStrapi,
   SiNextdotjs,
+  SiNestjs,
 } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
@@ -25,6 +26,7 @@ import {
   DockerGradient,
   ExpressGradient,
   FigmaGradient,
+  NestjsGradient,
   NodejsGradient,
   ReactGradient,
   TypescriptGradient,
@@ -50,21 +52,23 @@ const Skills: React.FC = () => {
   const mainTitle = pathname === "/fr" ? "Compétences" : "Skills";
 
   const SkillsSection: SkillsSection[] = [
+    // DESIGN
     {
       title: "Design",
       order: 3,
       skills: [
         {
+          icon: <SiTailwindcss />,
+          label: "tailwind",
+        },
+        {
           icon: <FigmaGradient />,
           label: "figma",
           important: true,
         },
-        {
-          icon: <SiTailwindcss />,
-          label: "tailwind",
-        },
       ],
     },
+    // FRONT
     {
       title: "Front-end",
       skills: [
@@ -72,6 +76,15 @@ const Skills: React.FC = () => {
           icon: <ReactGradient />,
           label: "react.js",
           important: true,
+        },
+        {
+          icon: <TypescriptGradient />,
+          label: "typescript",
+          important: true,
+        },
+        {
+          icon: <SiNextdotjs />,
+          label: "next.js",
         },
         {
           icon: (
@@ -85,23 +98,15 @@ const Skills: React.FC = () => {
           ),
           label: "shadcn-ui",
         },
-        {
-          icon: <TypescriptGradient />,
-          label: "typescript",
-          important: true,
-        },
-        {
-          icon: <SiNextdotjs />,
-          label: "next.js",
-        },
       ],
     },
+    // BACK
     {
       title: "Back-end",
       skills: [
         {
-          icon: <ExpressGradient />,
-          label: "express",
+          icon: <NestjsGradient />,
+          label: "nest.js",
           important: true,
         },
         {
@@ -119,17 +124,18 @@ const Skills: React.FC = () => {
         },
       ],
     },
+    // OTHER
     {
       title: others,
       skills: [
         {
+          icon: <FaGithub />,
+          label: "git & CI/CD",
+        },
+        {
           icon: <DockerGradient />,
           label: "Docker",
           important: true,
-        },
-        {
-          icon: <FaGithub />,
-          label: "git & github",
         },
         {
           icon: <AwsGradient />,

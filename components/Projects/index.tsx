@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
+import Image from "next/image";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaAws, FaExternalLinkAlt } from "react-icons/fa";
 import {
   SiPostgresql,
   SiExpress,
@@ -15,8 +16,9 @@ import {
   SiTypescript,
   SiReactquery,
   SiSocketdotio,
+  SiNestjs,
 } from "react-icons/si";
-import { FaReact, FaDocker, FaJava, FaLess } from "react-icons/fa";
+import { FaReact, FaDocker } from "react-icons/fa";
 
 import { Badge } from "../ui/badge";
 
@@ -25,7 +27,19 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
 
-import { ShadcnLogo } from "../Svg";
+import { EJSLogo, ShadcnLogo } from "../Svg";
+
+interface ProjectsProps {
+  mainTitle: string;
+  spotify: string;
+  newDelhi: string;
+  asteria: string;
+  poketec: string;
+  carrefourVoyages: string;
+  loltimeflash: string;
+  nestblog: string;
+  reading: string;
+}
 
 interface ProjectSkills {
   icon: React.ReactNode;
@@ -42,17 +56,23 @@ interface ProjectsList {
   mobileGif?: string[];
 }
 
-const Projects: React.FC<{ projects: any }> = ({ projects }) => {
+const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
+  console.log("projects", projects);
+
   // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
-      icon: "🎶",
+      icon: "/project-icons/spotify-transparent.svg",
       title: "Spotify Max +",
       description: projects.spotify,
       skills: [
         {
           icon: <SiNextdotjs />,
           label: "NextJS",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
         },
         {
           icon: <ShadcnLogo />,
@@ -78,7 +98,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       ],
     },
     {
-      icon: "🏗️",
+      icon: "/carrefour.png",
       title: "New-Delhi",
       description: projects.newDelhi,
       skills: [
@@ -98,6 +118,10 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
           icon: <FaDocker />,
           label: "Docker",
         },
+        {
+          icon: <FaAws />,
+          label: "AWS",
+        },
       ],
       desktopGif: ["/new-delhi/builder.gif"],
     },
@@ -105,7 +129,39 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
   // SUB SECTION
   const subProjectList: ProjectsList[] = [
     {
-      icon: "🌌",
+      icon: "/project-icons/loltimeflash.png",
+      url: "https://loltimeflash.com/",
+      title: "LolTimeFlash",
+      description: projects.loltimeflash,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "NextJS",
+        },
+        {
+          icon: <SiSocketdotio />,
+          label: "Socket.io",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
+        },
+        {
+          icon: <SiExpress />,
+          label: "Express.js",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
+      icon: "/project-icons/asteria-transparent.svg",
       url: "https://asteriaspace.fr/",
       title: "Asteria",
       description: projects.asteria,
@@ -129,35 +185,7 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       ],
     },
     {
-      icon: "🌟",
-      url: "https://loltimeflash.com/",
-      title: "LolTimeFlash",
-      description: projects.loltimeflash,
-      skills: [
-        {
-          icon: <SiNextdotjs />,
-          label: "NextJS",
-        },
-        {
-          icon: <SiSocketdotio />,
-          label: "Socket.io",
-        },
-        {
-          icon: <SiExpress />,
-          label: "Express.js",
-        },
-        {
-          icon: <SiTailwindcss />,
-          label: "Tailwind",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-      ],
-    },
-    {
-      icon: "🔴",
+      icon: "/project-icons/pokeball-transparent.png",
       url: "https://spallian.mehdihattou.com/",
       title: "PokéTec",
       description: projects.poketec,
@@ -181,7 +209,31 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
       ],
     },
     {
-      icon: "📖",
+      icon: "/project-icons/nest-transparent.png",
+      url: "https://nestblog.mehdihattou.com/",
+      title: "Nestblog",
+      description: projects.nestblog,
+      skills: [
+        {
+          icon: <SiNestjs />,
+          label: "Nest.js",
+        },
+        {
+          icon: <EJSLogo />,
+          label: "EJS",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
+      icon: "/project-icons/nextra-transparent.svg",
       url: "https://reading-demo.vercel.app/",
       title: "Reading",
       description: projects.reading,
@@ -201,26 +253,6 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
         {
           icon: <FaDocker />,
           label: "Docker",
-        },
-      ],
-    },
-    {
-      icon: "✈️",
-      url: "https://voyages.carrefour.fr/",
-      title: "Carrefour Voyages",
-      description: projects.carrefourVoyages,
-      skills: [
-        {
-          icon: <SiTypescript />,
-          label: "TypeScript",
-        },
-        {
-          icon: <FaJava />,
-          label: "Freemarker",
-        },
-        {
-          icon: <FaLess />,
-          label: "Less",
         },
       ],
     },
@@ -255,7 +287,13 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
               custom={index}
             >
               <div className="flex items-center justify-between">
-                <p className="text-2xl ">{project.icon}</p>
+                <Image
+                  width={40}
+                  height={40}
+                  alt={`${project.title} icon`}
+                  className="text-2xl"
+                  src={project.icon}
+                />
                 <div className="flex items-center justify-between gap-3">
                   {project.desktopGif && (
                     <CarouselProject
@@ -319,7 +357,13 @@ const Projects: React.FC<{ projects: any }> = ({ projects }) => {
                 custom={index + 2}
               >
                 <div className="flex items-center justify-between">
-                  <p className="text-2xl ">{project.icon}</p>
+                  <Image
+                    width={project.title === "Asteria" ? 60 : 40}
+                    height={project.title === "Asteria" ? 60 : 40}
+                    alt={`${project.title} icon`}
+                    className="text-2xl"
+                    src={project.icon}
+                  />
                   <div className="flex items-center justify-between gap-3">
                     {(project.desktopGif || project.mobileGif) && (
                       <CarouselProject
