@@ -61,6 +61,7 @@ export function middleware(request: NextRequest) {
     "/new-delhi",
     "/project-icons",
     "/carrefour.png",
+    "/song-choicer.png",
   ];
 
   if (excludePaths.some((path) => pathname.startsWith(path))) {

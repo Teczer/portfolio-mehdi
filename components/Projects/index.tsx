@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { FaAws, FaExternalLinkAlt } from "react-icons/fa";
+import { FaAws, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import {
   SiPostgresql,
   SiExpress,
@@ -19,6 +19,7 @@ import {
   SiNestjs,
 } from "react-icons/si";
 import { FaReact, FaDocker } from "react-icons/fa";
+import { SiShadcnui } from "react-icons/si";
 
 import { Badge } from "../ui/badge";
 
@@ -27,7 +28,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
 
-import { EJSLogo, ShadcnLogo } from "../Svg";
+import { EJSLogo } from "../Svg";
+import { cn } from "@/lib/utils";
 
 interface ProjectsProps {
   mainTitle: string;
@@ -39,6 +41,7 @@ interface ProjectsProps {
   loltimeflash: string;
   nestblog: string;
   reading: string;
+  songchoicer: string;
 }
 
 interface ProjectSkills {
@@ -49,6 +52,7 @@ interface ProjectSkills {
 interface ProjectsList {
   icon: string;
   url?: string;
+  gitUrl: string;
   title: string;
   description: string;
   skills: ProjectSkills[];
@@ -62,8 +66,38 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
   // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
+      icon: "/song-choicer.png",
+      title: "Song Choicer",
+      url: "https://songchoicer.com/",
+      gitUrl: "https://github.com/Teczer/SongChoicer",
+      description: projects.songchoicer,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
       icon: "/project-icons/spotify-transparent.svg",
       title: "Spotify Max +",
+      gitUrl: "https://github.com/Bakhaw/spotify",
       description: projects.spotify,
       skills: [
         {
@@ -75,8 +109,8 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           label: "TanStack Query",
         },
         {
-          icon: <ShadcnLogo />,
-          label: "Shadcn-ui",
+          icon: <SiShadcnui />,
+          label: "shadcn/ui",
         },
         {
           icon: <SiTailwindcss />,
@@ -97,39 +131,12 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         "/spotify/mobile/studio.gif",
       ],
     },
-    {
-      icon: "/carrefour.png",
-      title: "New-Delhi",
-      description: projects.newDelhi,
-      skills: [
-        {
-          icon: <FaReact />,
-          label: "React.js",
-        },
-        {
-          icon: <SiStrapi />,
-          label: "Strapi.io",
-        },
-        {
-          icon: <SiPostgresql />,
-          label: "PostgreSQL",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-        {
-          icon: <FaAws />,
-          label: "AWS",
-        },
-      ],
-      desktopGif: ["/new-delhi/builder.gif"],
-    },
   ];
   // SUB SECTION
   const subProjectList: ProjectsList[] = [
     {
       icon: "/project-icons/loltimeflash.png",
+      gitUrl: "https://github.com/Teczer/LolTimeFlash",
       url: "https://loltimeflash.com/",
       title: "LolTimeFlash",
       description: projects.loltimeflash,
@@ -161,18 +168,18 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       ],
     },
     {
-      icon: "/project-icons/asteria-transparent.svg",
-      url: "https://asteriaspace.fr/",
-      title: "Asteria",
-      description: projects.asteria,
+      icon: "/carrefour.png",
+      gitUrl: "https://github.com/Teczer/New-Delhi",
+      title: "New-Delhi",
+      description: projects.newDelhi,
       skills: [
         {
           icon: <FaReact />,
           label: "React.js",
         },
         {
-          icon: <SiExpress />,
-          label: "Express.js",
+          icon: <SiStrapi />,
+          label: "Strapi.io",
         },
         {
           icon: <SiPostgresql />,
@@ -182,10 +189,16 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           icon: <FaDocker />,
           label: "Docker",
         },
+        {
+          icon: <FaAws />,
+          label: "AWS",
+        },
       ],
+      desktopGif: ["/new-delhi/builder.gif"],
     },
     {
       icon: "/project-icons/pokeball-transparent.png",
+      gitUrl: "https://github.com/Teczer/spallian-test",
       url: "https://spallian.mehdihattou.com/",
       title: "PokéTec",
       description: projects.poketec,
@@ -209,7 +222,33 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       ],
     },
     {
+      icon: "/project-icons/asteria-transparent.svg",
+      gitUrl: "https://github.com/Teczer/Asteriaa",
+      url: "https://asteriaspace.fr/",
+      title: "Asteria",
+      description: projects.asteria,
+      skills: [
+        {
+          icon: <FaReact />,
+          label: "React.js",
+        },
+        {
+          icon: <SiExpress />,
+          label: "Express.js",
+        },
+        {
+          icon: <SiPostgresql />,
+          label: "PostgreSQL",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
       icon: "/project-icons/nest-transparent.png",
+      gitUrl: "https://github.com/Teczer/nestjs-blog",
       url: "https://nestblog.mehdihattou.com/",
       title: "Nestblog",
       description: projects.nestblog,
@@ -234,6 +273,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
     },
     {
       icon: "/project-icons/nextra-transparent.svg",
+      gitUrl: "https://github.com/Teczer/reading",
       url: "https://reading-demo.vercel.app/",
       title: "Reading",
       description: projects.reading,
@@ -288,13 +328,21 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
             >
               <div className="flex items-center justify-between">
                 <Image
-                  width={40}
-                  height={40}
+                  width={400}
+                  height={400}
                   alt={`${project.title} icon`}
-                  className="text-2xl"
+                  className="w-10"
                   src={project.icon}
                 />
                 <div className="flex items-center justify-between gap-3">
+                  <Link
+                    href={project.gitUrl}
+                    target="_blank"
+                    className="text-2xl transition-all hover:scale-125"
+                    aria-label={project.title}
+                  >
+                    <FaGithub className="text-accent" />
+                  </Link>
                   {project.desktopGif && (
                     <CarouselProject
                       desktopGif={project.desktopGif}
@@ -305,7 +353,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
                     <Link
                       href={project.url}
                       target="_blank"
-                      className="text-accent transition-all hover:scale-125"
+                      className="text-xl text-accent transition-all hover:scale-125"
                       aria-label={project.title}
                     >
                       <FaExternalLinkAlt />
@@ -358,13 +406,23 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
               >
                 <div className="flex items-center justify-between">
                   <Image
-                    width={project.title === "Asteria" ? 60 : 40}
-                    height={project.title === "Asteria" ? 60 : 40}
+                    width={400}
+                    height={400}
                     alt={`${project.title} icon`}
-                    className="text-2xl"
+                    className={cn(
+                      project.title === "Asteria" ? "w-14" : "w-10"
+                    )}
                     src={project.icon}
                   />
                   <div className="flex items-center justify-between gap-3">
+                    <Link
+                      href={project.gitUrl}
+                      target="_blank"
+                      className="text-xl transition-all hover:scale-125"
+                      aria-label={project.title}
+                    >
+                      <FaGithub />
+                    </Link>
                     {(project.desktopGif || project.mobileGif) && (
                       <CarouselProject
                         desktopGif={project.desktopGif}

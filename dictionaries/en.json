@@ -13,6 +13,7 @@
   "projects": {
     "mainTitle": "Projects",
     "spotify": "Advanced Spotify project undertaken in collaboration with my elder brother, the project initiator and lead. Explore new features and an enhanced user experience.",
+    "songchoicer": "Compare your favorite songs of an album and create a personalized ranking with ease.",
     "newDelhi": "Internal SAAS CMS Builder for Carrefour Voyages, specializing in rapid newsletter creation.",
     "asteria": "Learn the most complex concepts of astronomy in a playful and guided manner, with rewards and a card collection as a bonus!",
     "poketec": "Project using the PokéApiV2 API to provide information about random or searched Pokémon through an interactive Pokédex.",
