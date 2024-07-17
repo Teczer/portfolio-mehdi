@@ -11,8 +11,9 @@ import {
   SiPostgresql,
   SiStrapi,
   SiNextdotjs,
-  SiNestjs,
 } from "react-icons/si";
+import { FaTencentWeibo } from "react-icons/fa";
+
 import { FaGithub } from "react-icons/fa";
 import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 
@@ -21,10 +22,11 @@ import { useInView } from "react-intersection-observer";
 
 // Import des images pour les icônes des technologies
 import shadcn from "@/public/shadcn.svg";
+import nativewind from "@/public/nativewind.svg";
 import {
   AwsGradient,
   DockerGradient,
-  ExpressGradient,
+  ExpoGradient,
   FigmaGradient,
   NestjsGradient,
   NodejsGradient,
@@ -52,22 +54,6 @@ const Skills: React.FC = () => {
   const mainTitle = pathname === "/fr" ? "Compétences" : "Skills";
 
   const SkillsSection: SkillsSection[] = [
-    // DESIGN
-    {
-      title: "Design",
-      order: 3,
-      skills: [
-        {
-          icon: <SiTailwindcss />,
-          label: "tailwind",
-        },
-        {
-          icon: <FigmaGradient />,
-          label: "figma",
-          important: true,
-        },
-      ],
-    },
     // FRONT
     {
       title: "Front-end",
@@ -124,6 +110,30 @@ const Skills: React.FC = () => {
         },
       ],
     },
+    // Mobile
+    {
+      title: "Mobile",
+      skills: [
+        {
+          icon: <ReactGradient />,
+          label: "react native",
+          important: true,
+        },
+        {
+          icon: <ExpoGradient />,
+          label: "expo",
+          important: true,
+        },
+        {
+          icon: <FaTencentWeibo />,
+          label: "MMKV",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "nativewind",
+        },
+      ],
+    },
     // OTHER
     {
       title: others,
@@ -148,6 +158,22 @@ const Skills: React.FC = () => {
         },
       ],
     },
+    // DESIGN
+    {
+      title: "Design",
+      order: 3,
+      skills: [
+        {
+          icon: <SiTailwindcss />,
+          label: "tailwind",
+        },
+        {
+          icon: <FigmaGradient />,
+          label: "figma",
+          important: true,
+        },
+      ],
+    },
   ];
 
   // Framer motion
@@ -167,11 +193,17 @@ const Skills: React.FC = () => {
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:flex sm:justify-between">
         {SkillsSection.map((skill, index) => {
+          const isLastItemAndOdd =
+            index === SkillsSection.length - 1 &&
+            SkillsSection.length % 2 !== 0;
           return (
             <div
               className={cn(
                 "mb-10 flex flex-col items-start justify-start justify-self-center sm:order-1",
-                { "order-3": skill.title === "Design" }
+                {
+                  "col-span-2 sm:col-span-auto justify-self-center":
+                    isLastItemAndOdd,
+                }
               )}
               key={index}
             >

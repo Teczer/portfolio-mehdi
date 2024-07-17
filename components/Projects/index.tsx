@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { FaAws, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import {
+  FaAws,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaTencentWeibo,
+} from "react-icons/fa";
 import {
   SiPostgresql,
   SiExpress,
@@ -20,6 +25,7 @@ import {
 } from "react-icons/si";
 import { FaReact, FaDocker } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 import { Badge } from "../ui/badge";
 
@@ -61,8 +67,6 @@ interface ProjectsList {
 }
 
 const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
-  console.log("projects", projects);
-
   // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
@@ -77,6 +81,10 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           label: "Next.js",
         },
         {
+          icon: <TbBrandReactNative />,
+          label: "React Native",
+        },
+        {
           icon: <SiReactquery />,
           label: "TanStack Query",
         },
@@ -85,8 +93,12 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           label: "TypeScript",
         },
         {
+          icon: <FaTencentWeibo />,
+          label: "MMKV",
+        },
+        {
           icon: <SiTailwindcss />,
-          label: "Tailwind",
+          label: "Tailwind & NativeWind",
         },
         {
           icon: <FaDocker />,

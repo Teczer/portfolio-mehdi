@@ -19,9 +19,9 @@ const Footer: React.FC<{ footer: any; lang: any }> = ({ footer, lang }) => {
         </div>
       </div>
       <p className="text-base text-accent">{footer.author}</p>
-      <Link href={`/${lang}/valentine`}>
-        <p className="text-base text-accent">©Copyright 2024 - Mehdi Hattou</p>
-      </Link>
+      <p className="text-base text-accent">
+        ©Copyright {new Date().getFullYear()} - Mehdi Hattou
+      </p>
     </footer>
   );
 };
