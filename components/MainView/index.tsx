@@ -31,14 +31,14 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
   const handleHoverStart = () => {
     controls.start({
       rotate: 360,
-      transition: { duration: 0.2 },
+      transition: { duration: 0.4 },
     });
   };
 
   const handleHoverEnd = () => {
     controls.start({
       rotate: 0,
-      transition: { duration: 0.2 },
+      transition: { duration: 0.4 },
     });
   };
 
