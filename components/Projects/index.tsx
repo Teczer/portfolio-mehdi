@@ -211,7 +211,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
     {
       icon: "/project-icons/pokeball-transparent.png",
       gitUrl: "https://github.com/Teczer/spallian-test",
-      url: "https://spallian.mehdihattou.com/",
+      url: "https://poketec.mehdihattou.com/",
       title: "PokéTec",
       description: projects.poketec,
       skills: [

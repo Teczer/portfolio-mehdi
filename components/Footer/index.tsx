@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-const Footer: React.FC<{ footer: any; lang: any }> = ({ footer, lang }) => {
+const Footer: React.FC<{ footer: any }> = ({ footer }) => {
   return (
     <footer className="my-8 flex flex-col items-center gap-4">
       <div className="mb-5 mt-10">
