@@ -9,6 +9,7 @@ import {
   FaAws,
   FaExternalLinkAlt,
   FaGithub,
+  FaNpm,
   FaTencentWeibo,
 } from "react-icons/fa";
 import {
@@ -22,6 +23,13 @@ import {
   SiReactquery,
   SiSocketdotio,
   SiNestjs,
+  SiExpo,
+  SiBun,
+  SiNpm,
+  SiJest,
+  SiEslint,
+  SiPrettier,
+  SiJavascript,
 } from "react-icons/si";
 import { FaReact, FaDocker } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
@@ -48,6 +56,7 @@ interface ProjectsProps {
   nestblog: string;
   reading: string;
   songchoicer: string;
+  fastExpoApp: string;
 }
 
 interface ProjectSkills {
@@ -58,6 +67,7 @@ interface ProjectSkills {
 interface ProjectsList {
   icon: string;
   url?: string;
+  npm?: string;
   gitUrl: string;
   title: string;
   description: string;
@@ -107,6 +117,55 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       ],
     },
     {
+      icon: "/project-icons/expo.svg",
+      url: "https://fast-expo-app-web.vercel.app/",
+      title: "Fast Expo App",
+      npm: "https://www.npmjs.com/package/fast-expo-app",
+      gitUrl: "https://github.com/Teczer/fast-expo-app",
+      description: projects.fastExpoApp,
+      skills: [
+        {
+          icon: <SiNpm />,
+          label: "NPM",
+        },
+        {
+          icon: <SiExpo />,
+          label: "Expo",
+        },
+        {
+          icon: <SiBun />,
+          label: "Bun",
+        },
+        {
+          icon: <FaTencentWeibo />,
+          label: "MMKV",
+        },
+        {
+          icon: <SiJest />,
+          label: "Jest",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "Typescript",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Nativewind",
+        },
+        {
+          icon: <SiEslint />,
+          label: "ESLint",
+        },
+        {
+          icon: <SiPrettier />,
+          label: "Prettier",
+        },
+      ],
+    },
+  ];
+  // SUB SECTION
+  const subProjectList: ProjectsList[] = [
+    {
       icon: "/project-icons/spotify-transparent.svg",
       title: "Spotify Max +",
       gitUrl: "https://github.com/Bakhaw/spotify",
@@ -143,9 +202,6 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         "/spotify/mobile/studio.gif",
       ],
     },
-  ];
-  // SUB SECTION
-  const subProjectList: ProjectsList[] = [
     {
       icon: "/project-icons/loltimeflash.png",
       gitUrl: "https://github.com/Teczer/LolTimeFlash",
@@ -209,6 +265,31 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       desktopGif: ["/new-delhi/builder.gif"],
     },
     {
+      icon: "/project-icons/nextra-transparent.svg",
+      gitUrl: "https://github.com/Teczer/reading",
+      url: "https://reading-demo.vercel.app/",
+      title: "Reading",
+      description: projects.reading,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "NextJS",
+        },
+        {
+          icon: <SiNextra />,
+          label: "Nextra",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
       icon: "/project-icons/pokeball-transparent.png",
       gitUrl: "https://github.com/Teczer/spallian-test",
       url: "https://poketec.mehdihattou.com/",
@@ -245,6 +326,10 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           label: "React.js",
         },
         {
+          icon: <SiJavascript />,
+          label: "Javascript",
+        },
+        {
           icon: <SiExpress />,
           label: "Express.js",
         },
@@ -276,31 +361,6 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         {
           icon: <SiTypescript />,
           label: "TypeScript",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-      ],
-    },
-    {
-      icon: "/project-icons/nextra-transparent.svg",
-      gitUrl: "https://github.com/Teczer/reading",
-      url: "https://reading-demo.vercel.app/",
-      title: "Reading",
-      description: projects.reading,
-      skills: [
-        {
-          icon: <SiNextdotjs />,
-          label: "NextJS",
-        },
-        {
-          icon: <SiNextra />,
-          label: "Nextra",
-        },
-        {
-          icon: <SiTailwindcss />,
-          label: "Tailwind",
         },
         {
           icon: <FaDocker />,
@@ -346,7 +406,18 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
                   className="w-10"
                   src={project.icon}
                 />
+
                 <div className="flex items-center justify-between gap-3">
+                  {project.npm && (
+                    <Link
+                      href={project.npm}
+                      target="_blank"
+                      className="text-xl text-accent transition-all hover:scale-125"
+                      aria-label={project.title}
+                    >
+                      <FaNpm size={50} />
+                    </Link>
+                  )}
                   <Link
                     href={project.gitUrl}
                     target="_blank"
@@ -376,9 +447,10 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
               <h3 className="text-2xl font-semibold leading-none tracking-tight text-accent">
                 {project.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
-                {project.description}
-              </p>
+              <p
+                dangerouslySetInnerHTML={{ __html: project.description }}
+                className="text-sm text-muted-foreground"
+              />
               <ul className="flex flex-wrap items-center justify-start gap-2">
                 {/* SKILLS */}
                 {project.skills.map((skill, index) => {

@@ -12,6 +12,7 @@
   },
   "projects": {
     "mainTitle": "Projets",
+    "fastExpoApp": "Générez instantanément une application Expo moderne grâce à cette <b>CLI</b> disponible sur npm <b>(npx fast-expo-app@latest)</b>. Elle intègre directement Expo, Nativewind, MMKV, Typescript, Jest et bien d'autres outils pour démarrer rapidement vos projets mobiles avec les meilleures pratiques.",
     "spotify": "Projet avancé de Spotify réalisé en collaboration avec mon grand-frère, initiateur et lead du projet. Explorez de nouvelles fonctionnalités et une expérience utilisateur améliorée.",
     "songchoicer": "Comparez vos chansons préférées d'un album et créez un classement personnalisé en toute simplicité. Ce projet comporte un site web et une application mobile.",
     "newDelhi": "CMS Builder interne SAAS pour Carrefour Voyages, spécialisé dans la création rapide de newsletters.",

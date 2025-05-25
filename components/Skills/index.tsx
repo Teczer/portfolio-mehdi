@@ -11,6 +11,8 @@ import {
   SiPostgresql,
   SiStrapi,
   SiNextdotjs,
+  SiVite,
+  SiReactquery,
 } from "react-icons/si";
 import { FaTencentWeibo } from "react-icons/fa";
 
@@ -20,9 +22,7 @@ import { fadeInAnimationsVariants } from "@/lib/fadeInAnimation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Import des images pour les icônes des technologies
 import shadcn from "@/public/shadcn.svg";
-import nativewind from "@/public/nativewind.svg";
 import {
   AwsGradient,
   DockerGradient,
@@ -73,16 +73,8 @@ const Skills: React.FC = () => {
           label: "next.js",
         },
         {
-          icon: (
-            <Image
-              src={shadcn}
-              alt="shadcn"
-              className="size-5"
-              width={20}
-              height={20}
-            />
-          ),
-          label: "shadcn-ui",
+          icon: <SiReactquery />,
+          label: "react query",
         },
       ],
     },
