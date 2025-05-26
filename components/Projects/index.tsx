@@ -119,7 +119,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
     {
       icon: "/project-icons/expo.svg",
       url: "https://fast-expo-app-web.vercel.app/",
-      title: "Fast Expo App",
+      title: "Fast Expo App | (NPM Package)",
       npm: "https://www.npmjs.com/package/fast-expo-app",
       gitUrl: "https://github.com/Teczer/fast-expo-app",
       description: projects.fastExpoApp,
