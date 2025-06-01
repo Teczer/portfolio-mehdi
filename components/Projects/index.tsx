@@ -30,6 +30,7 @@ import {
   SiEslint,
   SiPrettier,
   SiJavascript,
+  SiTurborepo,
 } from "react-icons/si";
 import { FaReact, FaDocker } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
@@ -117,7 +118,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       ],
     },
     {
-      icon: "/project-icons/expo.svg",
+      icon: "/fast-expo-app.png",
       url: "https://fast-expo-app-web.vercel.app/",
       title: "Fast Expo App | (NPM Package)",
       npm: "https://www.npmjs.com/package/fast-expo-app",
@@ -147,6 +148,10 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         {
           icon: <SiTypescript />,
           label: "Typescript",
+        },
+        {
+          icon: <SiTurborepo />,
+          label: "Turborepo",
         },
         {
           icon: <SiTailwindcss />,
