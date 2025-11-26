@@ -43,7 +43,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselProject from "../CarouselProject";
 
-import { EJSLogo } from "../Svg";
 import { cn } from "@/lib/utils";
 
 interface ProjectsProps {
@@ -81,11 +80,11 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
   // MAIN SECTION
   const projectList: ProjectsList[] = [
     {
-      icon: "/song-choicer.png",
-      title: "Song Choicer",
-      url: "https://songchoicer.com/",
-      gitUrl: "https://github.com/Teczer/SongChoicer",
-      description: projects.songchoicer,
+      icon: "/project-icons/loltimeflash.png",
+      gitUrl: "https://github.com/Teczer/LolTimeFlash",
+      url: "https://loltimeflash.com/",
+      title: "LolTimeFlash",
+      description: projects.loltimeflash,
       skills: [
         {
           icon: <SiNextdotjs />,
@@ -96,12 +95,24 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
           label: "React Native",
         },
         {
-          icon: <SiReactquery />,
-          label: "TanStack Query",
+          icon: <SiExpo />,
+          label: "Expo",
+        },
+        {
+          icon: <SiNestjs />,
+          label: "NestJS",
         },
         {
           icon: <SiTypescript />,
           label: "TypeScript",
+        },
+        {
+          icon: <SiSocketdotio />,
+          label: "Socket.io",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
         },
         {
           icon: <FaTencentWeibo />,
@@ -109,7 +120,11 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         },
         {
           icon: <SiTailwindcss />,
-          label: "Tailwind & NativeWind",
+          label: "Tailwind",
+        },
+        {
+          icon: <SiTurborepo />,
+          label: "Turborepo",
         },
         {
           icon: <FaDocker />,
@@ -171,6 +186,43 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
   // SUB SECTION
   const subProjectList: ProjectsList[] = [
     {
+      icon: "/song-choicer.png",
+      title: "Song Choicer",
+      url: "https://songchoicer.com/",
+      gitUrl: "https://github.com/Teczer/SongChoicer",
+      description: projects.songchoicer,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+        },
+        {
+          icon: <TbBrandReactNative />,
+          label: "React Native",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+        },
+        {
+          icon: <FaTencentWeibo />,
+          label: "MMKV",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind & NativeWind",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+    },
+    {
       icon: "/project-icons/spotify-transparent.svg",
       title: "Spotify Max +",
       gitUrl: "https://github.com/Bakhaw/spotify",
@@ -205,39 +257,6 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         "/spotify/mobile/homepage.gif",
         "/spotify/mobile/search.gif",
         "/spotify/mobile/studio.gif",
-      ],
-    },
-    {
-      icon: "/project-icons/loltimeflash.png",
-      gitUrl: "https://github.com/Teczer/LolTimeFlash",
-      url: "https://loltimeflash.com/",
-      title: "LolTimeFlash",
-      description: projects.loltimeflash,
-      skills: [
-        {
-          icon: <SiNextdotjs />,
-          label: "NextJS",
-        },
-        {
-          icon: <SiSocketdotio />,
-          label: "Socket.io",
-        },
-        {
-          icon: <SiReactquery />,
-          label: "TanStack Query",
-        },
-        {
-          icon: <SiExpress />,
-          label: "Express.js",
-        },
-        {
-          icon: <SiTailwindcss />,
-          label: "Tailwind",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
       ],
     },
     {
@@ -341,31 +360,6 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         {
           icon: <SiPostgresql />,
           label: "PostgreSQL",
-        },
-        {
-          icon: <FaDocker />,
-          label: "Docker",
-        },
-      ],
-    },
-    {
-      icon: "/project-icons/nest-transparent.png",
-      gitUrl: "https://github.com/Teczer/nestjs-blog",
-      url: "https://nestblog.mehdihattou.com/",
-      title: "Nestblog",
-      description: projects.nestblog,
-      skills: [
-        {
-          icon: <SiNestjs />,
-          label: "Nest.js",
-        },
-        {
-          icon: <EJSLogo />,
-          label: "EJS",
-        },
-        {
-          icon: <SiTypescript />,
-          label: "TypeScript",
         },
         {
           icon: <FaDocker />,
