@@ -188,7 +188,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
     {
       icon: "/song-choicer.png",
       title: "Song Choicer",
-      url: "https://songchoicer.com/",
+      url: "https://songchoicer.mehdihattou.com/",
       gitUrl: "https://github.com/Teczer/SongChoicer",
       description: projects.songchoicer,
       skills: [
@@ -225,6 +225,7 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
     {
       icon: "/project-icons/spotify-transparent.svg",
       title: "Spotify Max +",
+      url: "https://spotify.mehdihattou.com/",
       gitUrl: "https://github.com/Bakhaw/spotify",
       description: projects.spotify,
       skills: [
