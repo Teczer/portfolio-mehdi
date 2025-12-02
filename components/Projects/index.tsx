@@ -339,6 +339,36 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         },
       ],
     },
+    {
+      icon: "/project-icons/asteria-transparent.svg",
+      gitUrl: "https://github.com/Teczer/Asteriaa",
+      title: "Asteria",
+      description: projects.asteria,
+      skills: [
+        {
+          icon: <FaReact />,
+          label: "React.js",
+        },
+        {
+          icon: <SiJavascript />,
+          label: "Javascript",
+        },
+        {
+          icon: <SiExpress />,
+          label: "Express.js",
+        },
+        {
+          icon: <SiPostgresql />,
+          label: "PostgreSQL",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
+      ],
+      desktopGif: ["/asteria/desktop/global.gif"],
+      mobileGif: ["/asteria/mobile/global.gif"],
+    },
   ];
 
   // FRAMER MOTION
