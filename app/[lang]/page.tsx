@@ -13,10 +13,12 @@ import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
 export default async function Home({
-  params: { lang },
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+  const locale = lang as Locale;
   const jsonLd: WithContext<Person> = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -34,7 +36,7 @@ export default async function Home({
   };
 
   const { navigation, mainView, projects, footer, testimonial } =
-    await getDictionary(lang);
+    await getDictionary(locale);
 
   return (
     <main className="relative m-auto min-h-full max-w-6xl px-4">

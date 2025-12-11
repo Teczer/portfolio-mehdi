@@ -63,19 +63,21 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+  const locale = lang as Locale;
   return (
     <html
-      lang={params.lang}
+      lang={locale}
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="h-full bg-background">
+      <body suppressHydrationWarning className="h-full bg-background">
         <ThemeProvider
           defaultTheme="red"
           enableSystem
