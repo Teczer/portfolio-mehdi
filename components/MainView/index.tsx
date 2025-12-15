@@ -67,6 +67,7 @@ const MainView: React.FC<{ mainView: any }> = ({ mainView }) => {
               width={400}
               height={400}
               priority
+              fetchPriority="high"
             />
           </motion.div>
         </motion.div>
