@@ -1,4 +1,3 @@
-version: '3'
 services:
   portfolio:
     container_name: portfolio
@@ -8,8 +7,4 @@ services:
       dockerfile: ./Dockerfile
     restart: unless-stopped
     ports:
-      - 4444:4444
-
-volumes:
-  portfolioproject:
-
+      - "4444:4444"
