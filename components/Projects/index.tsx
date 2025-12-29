@@ -264,9 +264,9 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
       ],
     },
     {
-      icon: "/project-icons/lanegap.svg", // ou .png selon ton format
+      icon: "/project-icons/lanegap.svg",
       gitUrl: "https://github.com/Teczer/lanegap",
-      url: "https://lanegap.com/", // ou ton URL
+      url: "https://lanegap.loltimeflash.com/",
       title: "LaneGap",
       description: projects.lanegap,
       skills: [
