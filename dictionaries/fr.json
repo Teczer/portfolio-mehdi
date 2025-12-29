@@ -21,7 +21,8 @@
     "nestblog": "Application de blog conçue principalement pour apprendre Nest.js, explorez une landing page avec tous les articles de blog, offrant une expérience utilisateur fluide et une interface intuitive.",
     "loltimeflash": "Communiquer avec vos coéquipiers sur League of Legends via un système de lobby et de websockets n'a jamais été aussi simple ! Une application mobile est actuellement en cours de développement et arrive bientôt.",
     "carrefourVoyages": "Pendant mon alternance, j'ai résolu des tickets, intégré des thèmes comme celui de Noël ou Halloween, et contribué à la maintenance du site web principal.",
-    "reading": "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)"
+    "reading": "Documentation des projets internes de Carrefour Voyages, des SAAS que j'ai conçus et documentés. (DEMO VERSION)",
+    "lanegap": "Outil de coaching personnel pour la laning phase sur League of Legends. Accédez instantanément aux informations critiques d'un matchup en moins de 5 secondes : counter picks, tips, power spikes et notes personnelles."
   },
   "testimonial": {
     "sectionTitle": "Recommandations",

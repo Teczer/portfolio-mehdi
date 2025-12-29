@@ -31,6 +31,8 @@ import {
   SiPrettier,
   SiJavascript,
   SiTurborepo,
+  SiPocketbase,
+  SiFramer,
 } from "react-icons/si";
 import { FaReact, FaDocker } from "react-icons/fa";
 import { SiShadcnui } from "react-icons/si";
@@ -57,6 +59,7 @@ interface ProjectsProps {
   reading: string;
   songchoicer: string;
   fastExpoApp: string;
+  lanegap: string;
 }
 
 interface ProjectSkills {
@@ -258,6 +261,47 @@ const Projects: React.FC<{ projects: ProjectsProps }> = ({ projects }) => {
         "/spotify/mobile/homepage.gif",
         "/spotify/mobile/search.gif",
         "/spotify/mobile/studio.gif",
+      ],
+    },
+    {
+      icon: "/project-icons/lanegap.svg", // ou .png selon ton format
+      gitUrl: "https://github.com/Teczer/lanegap",
+      url: "https://lanegap.com/", // ou ton URL
+      title: "LaneGap",
+      description: projects.lanegap,
+      skills: [
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+        },
+        {
+          icon: <SiReactquery />,
+          label: "TanStack Query",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind",
+        },
+        {
+          icon: <SiFramer />,
+          label: "Framer Motion",
+        },
+        {
+          icon: <SiPocketbase />,
+          label: "PocketBase",
+        },
+        {
+          icon: <SiBun />,
+          label: "Bun",
+        },
+        {
+          icon: <FaDocker />,
+          label: "Docker",
+        },
       ],
     },
     {
